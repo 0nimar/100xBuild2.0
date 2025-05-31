@@ -21,7 +21,7 @@ async def get_tracking_script(request: Request):
         console.log('Tracking script initialized'); // Debug log
         
         // Configuration
-        const TRACKING_ENDPOINT = 'http://localhost:8000/api/v1/tracking/track';
+        const TRACKING_ENDPOINT = 'https://d66d-2409-408c-9091-6729-b91e-77b0-fd5e-e44d.ngrok-free.app/api/v1/tracking/track';
         const SESSION_TIMEOUT = 30 * 60 * 1000; // 30 minutes in milliseconds
         const PAGE_CHANGE_INTERVAL = 1000; // Check for page changes every second
         let sessionId = localStorage.getItem('tracking_session_id') || null;
@@ -275,8 +275,13 @@ async def track_page_view(request: Request):
         data = await request.json()
         print(f"Tracking data: {data}") # Server-side debug log
         
-        # Get client IP
-        ip = request.client.host
+        # Get IP directly from X-Forwarded-For header
+        ip = request.headers.get("X-Forwarded-For", "0.0.0.0")
+        # If there are multiple IPs, take the first one
+        if "," in ip:
+            ip = ip.split(",")[0].strip()
+            
+        print(f"Using IP from X-Forwarded-For: {ip}")
         
         # Handle session
         session_id = data.get("sessionId")
