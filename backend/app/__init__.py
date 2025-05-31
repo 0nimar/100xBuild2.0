@@ -1,0 +1,3 @@
+"""
+FastAPI Template Application
+""" 
