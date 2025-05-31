@@ -6,6 +6,8 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Counter } from "./components/Counter"
+import { DateRangePicker } from "@/components/ui/date-range-picker"
+import { addDays, subDays } from "date-fns"
 import {
   BarChart,
   Bar,
@@ -42,6 +44,8 @@ interface DomainData {
   operating_systems: Record<string, number>
   screen_resolutions: Record<string, number>
   pages: Record<string, number>
+  countries: Record<string, number>
+  cities: Record<string, number>
   average_session_duration: number
   total_sessions: number
   latest_activity: string
@@ -50,6 +54,7 @@ interface DomainData {
   referrers: Record<string, number>
   entry_pages: Record<string, number>
   exit_pages: Record<string, number>
+  date: string
 }
 
 const COLORS = [
@@ -60,6 +65,21 @@ const COLORS = [
   "hsl(var(--chart-5))",
 ]
 
+type FilterType = 'device' | 'browser' | 'os' | 'page';
+
+interface ActiveFilters {
+  [key: string]: string | undefined;
+  device?: string;
+  browser?: string;
+  os?: string;
+  page?: string;
+}
+
+interface DateRange {
+  from: Date;
+  to: Date;
+}
+
 export default function AnalyticsDashboard() {
   const [domains, setDomains] = useState<string[]>([])
   const [selectedDomain, setSelectedDomain] = useState<string>("")
@@ -67,6 +87,11 @@ export default function AnalyticsDashboard() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [lastUpdated, setLastUpdated] = useState<Date>(new Date())
+  const [dateRange, setDateRange] = useState<DateRange>({
+    from: subDays(new Date(), 30),
+    to: new Date(),
+  })
+  const [activeFilters, setActiveFilters] = useState<ActiveFilters>({})
 
   // Real API calls
   const fetchDomains = async () => {
@@ -98,7 +123,13 @@ export default function AnalyticsDashboard() {
     setLoading(true)
     setError(null)
     try {
-      const response = await fetch(`http://localhost:8000/api/v1/tracking/domain/${domain}`)
+      const queryParams = new URLSearchParams({
+        from: dateRange.from.toISOString(),
+        to: dateRange.to.toISOString(),
+        ...activeFilters
+      })
+      
+      const response = await fetch(`http://localhost:8000/api/v1/tracking/domain/${domain}?${queryParams}`)
       if (!response.ok) {
         throw new Error('Failed to fetch analytics')
       }
@@ -168,6 +199,22 @@ export default function AnalyticsDashboard() {
       })()
     : []
 
+  const handleFilterClick = (filterType: FilterType, value: string) => {
+    setActiveFilters(prev => {
+      const newFilters = { ...prev }
+      if (newFilters[filterType] === value) {
+        delete newFilters[filterType]
+      } else {
+        newFilters[filterType] = value
+      }
+      return newFilters
+    })
+  }
+
+  const clearFilters = () => {
+    setActiveFilters({})
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800">
       <div className="container mx-auto p-6 space-y-8">
@@ -181,6 +228,12 @@ export default function AnalyticsDashboard() {
           </div>
 
           <div className="flex items-center gap-4">
+            <DateRangePicker
+              value={dateRange}
+              onChange={setDateRange}
+              className="bg-white dark:bg-slate-800"
+            />
+            
             <Select value={selectedDomain} onValueChange={setSelectedDomain}>
               <SelectTrigger className="w-[200px] bg-white dark:bg-slate-800">
                 <Globe className="w-4 h-4 mr-2" />
@@ -212,6 +265,31 @@ export default function AnalyticsDashboard() {
 
         {analyticsData && (
           <>
+            {/* Active Filters */}
+            {Object.keys(activeFilters).length > 0 && (
+              <div className="flex items-center gap-2 p-4 bg-white dark:bg-slate-800 rounded-lg border shadow-sm">
+                <span className="text-sm font-medium">Active Filters:</span>
+                {Object.entries(activeFilters).map(([type, value]) => (
+                  <Badge
+                    key={`${type}-${value}`}
+                    variant="secondary"
+                    className="cursor-pointer hover:bg-slate-200 dark:hover:bg-slate-700"
+                    onClick={() => handleFilterClick(type as FilterType, value)}
+                  >
+                    {type}: {value} ×
+                  </Badge>
+                ))}
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={clearFilters}
+                  className="ml-2"
+                >
+                  Clear All
+                </Button>
+              </div>
+            )}
+
             {/* Status Bar */}
             <div className="flex items-center justify-between p-4 bg-white dark:bg-slate-800 rounded-lg border shadow-sm">
               <div className="flex items-center gap-2">
@@ -351,9 +429,18 @@ export default function AnalyticsDashboard() {
                           paddingAngle={5}
                           dataKey="value"
                           label={({ name, value }) => `${name}: ${value}%`}
+                          onClick={(data) => handleFilterClick('device', data.name.toLowerCase())}
+                          style={{ cursor: 'pointer' }}
                         >
                           {deviceData.map((entry, index) => (
-                            <Cell key={`cell-${index}`} fill={entry.fill} />
+                            <Cell 
+                              key={`cell-${index}`} 
+                              fill={entry.fill}
+                              style={{ 
+                                opacity: activeFilters.device ? 
+                                  (activeFilters.device === entry.name.toLowerCase() ? 1 : 0.3) : 1 
+                              }}
+                            />
                           ))}
                         </Pie>
                         <ChartTooltip content={<ChartTooltipContent />} />
@@ -383,7 +470,13 @@ export default function AnalyticsDashboard() {
                         <XAxis dataKey="name" />
                         <YAxis />
                         <ChartTooltip content={<ChartTooltipContent />} />
-                        <Bar dataKey="value" fill={COLORS[0]} radius={[4, 4, 0, 0]} />
+                        <Bar 
+                          dataKey="value" 
+                          fill={COLORS[0]} 
+                          radius={[4, 4, 0, 0]}
+                          onClick={(data) => handleFilterClick('browser', data.name)}
+                          style={{ cursor: 'pointer' }}
+                        />
                       </BarChart>
                     </ResponsiveContainer>
                   </ChartContainer>
@@ -614,6 +707,69 @@ export default function AnalyticsDashboard() {
                             </div>
                           </div>
                         );
+                      })}
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Location Statistics */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              <Card className="bg-white dark:bg-slate-800">
+                <CardHeader>
+                  <CardTitle>Top Countries</CardTitle>
+                  <CardDescription>Visitor distribution by country</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-4">
+                    {Object.entries(analyticsData.countries || {})
+                      .sort(([, a], [, b]) => b - a)
+                      .slice(0, 5)
+                      .map(([country, count], index) => {
+                        const total = Object.values(analyticsData.countries || {}).reduce((sum, val) => sum + val, 0);
+                        const percentage = Math.round((count / total) * 100);
+                        return (
+                          <div key={country} className="flex items-center justify-between">
+                            <div className="flex items-center space-x-2">
+                              <Globe className="w-4 h-4 text-gray-500" />
+                              <span>{country}</span>
+                            </div>
+                            <div className="flex items-center space-x-2">
+                              <span className="text-sm text-gray-500">{count} visits</span>
+                              <Badge variant="secondary">{percentage}%</Badge>
+                            </div>
+                          </div>
+                        )
+                      })}
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-white dark:bg-slate-800">
+                <CardHeader>
+                  <CardTitle>Top Cities</CardTitle>
+                  <CardDescription>Visitor distribution by city</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-4">
+                    {Object.entries(analyticsData.cities || {})
+                      .sort(([, a], [, b]) => b - a)
+                      .slice(0, 5)
+                      .map(([city, count], index) => {
+                        const total = Object.values(analyticsData.cities || {}).reduce((sum, val) => sum + val, 0);
+                        const percentage = Math.round((count / total) * 100);
+                        return (
+                          <div key={city} className="flex items-center justify-between">
+                            <div className="flex items-center space-x-2">
+                              <Globe className="w-4 h-4 text-gray-500" />
+                              <span>{city}</span>
+                            </div>
+                            <div className="flex items-center space-x-2">
+                              <span className="text-sm text-gray-500">{count} visits</span>
+                              <Badge variant="secondary">{percentage}%</Badge>
+                            </div>
+                          </div>
+                        )
                       })}
                   </div>
                 </CardContent>

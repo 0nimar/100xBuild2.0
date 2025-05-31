@@ -1,5 +1,6 @@
 from fastapi import APIRouter, Request, Response, HTTPException
 from app.services.tracking import tracking_service
+from app.services.geolocation import geolocation_service
 from app.utils.helpers import format_response
 import json
 from datetime import datetime
@@ -22,7 +23,7 @@ async def get_tracking_script(request: Request):
         console.log('Tracking script initialized'); // Debug log
         
         // Configuration
-        const TRACKING_ENDPOINT = 'https://d66d-2409-408c-9091-6729-b91e-77b0-fd5e-e44d.ngrok-free.app/api/v1/tracking/track';
+        const TRACKING_ENDPOINT = 'http://localhost:8000/api/v1/tracking/track';
         const SESSION_TIMEOUT = 30 * 60 * 1000; // 30 minutes in milliseconds
         const PAGE_CHANGE_INTERVAL = 1000; // Check for page changes every second
         let sessionId = localStorage.getItem('tracking_session_id') || null;
@@ -270,8 +271,9 @@ async def track_page_view(request: Request):
     try:
         print("Received tracking request") # Server-side debug log
         
-        # Initialize tracking service
+        # Initialize services
         await tracking_service.initialize()
+        await geolocation_service.initialize()
         
         data = await request.json()
         print(f"Tracking data: {data}") # Server-side debug log
@@ -284,6 +286,9 @@ async def track_page_view(request: Request):
             
         print(f"Using IP from X-Forwarded-For: {ip}")
         
+        # Get geolocation data
+        location = await geolocation_service.get_location(ip)
+        
         # Handle session
         session_id = data.get("sessionId")
         is_session_end = data.get("isSessionEnd", False)
@@ -295,6 +300,8 @@ async def track_page_view(request: Request):
         # Create tracking data
         tracking_data = {
             "ip_address": ip,
+            "country": location["country"],
+            "city": location["city"],
             "domain": data.get("domain"),
             "page_path": data.get("page_path"),
             "page_title": data.get("title"),
@@ -384,6 +391,8 @@ async def get_domain_analytics(domain: str):
             "operating_systems": {},
             "screen_resolutions": {},
             "pages": {},
+            "countries": {},
+            "cities": {},
             "average_session_duration": 0,
             "total_sessions": 0,
             "referrers": {},
@@ -430,7 +439,7 @@ async def get_domain_analytics(domain: str):
             analytics["bounce_rate"] = round((bounced_sessions / len(sessions)) * 100, 1)
             analytics["pages_per_session"] = round(total_pages / len(sessions), 1)
         
-        # Calculate browser and OS distribution
+        # Calculate browser, OS, and location distribution
         for doc in domain_data:
             # Browser stats
             browser = doc.get("device_browser", "Unknown")
@@ -443,6 +452,14 @@ async def get_domain_analytics(domain: str):
             # Screen resolution stats
             resolution = doc.get("screen_resolution", "Unknown")
             analytics["screen_resolutions"][resolution] = analytics["screen_resolutions"].get(resolution, 0) + 1
+            
+            # Country stats
+            country = doc.get("country", "Unknown")
+            analytics["countries"][country] = analytics["countries"].get(country, 0) + 1
+            
+            # City stats
+            city = doc.get("city", "Unknown")
+            analytics["cities"][city] = analytics["cities"].get(city, 0) + 1
             
             # Page stats
             page = doc.get("page_path", "Unknown")
@@ -473,6 +490,20 @@ async def get_domain_analytics(domain: str):
         # Sort pages by views
         analytics["pages"] = dict(sorted(
             analytics["pages"].items(), 
+            key=lambda x: x[1], 
+            reverse=True
+        ))
+        
+        # Sort countries by views
+        analytics["countries"] = dict(sorted(
+            analytics["countries"].items(), 
+            key=lambda x: x[1], 
+            reverse=True
+        ))
+        
+        # Sort cities by views
+        analytics["cities"] = dict(sorted(
+            analytics["cities"].items(), 
             key=lambda x: x[1], 
             reverse=True
         ))

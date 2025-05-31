@@ -14,6 +14,8 @@ class TrackingData(BaseModel):
     referrer: Optional[str] = None
     language: Optional[str] = None
     screen_resolution: Optional[str] = None
+    country: Optional[str] = None
+    city: Optional[str] = None
     timestamp: datetime = Field(default_factory=datetime.utcnow)
     session_id: Optional[str] = None
     session_start: Optional[datetime] = None
