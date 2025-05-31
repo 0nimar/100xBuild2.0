@@ -3,6 +3,7 @@ from app.services.tracking import tracking_service
 from app.utils.helpers import format_response
 import json
 from datetime import datetime
+import uuid
 
 router = APIRouter()
 
@@ -10,99 +11,201 @@ router = APIRouter()
 async def get_tracking_script(request: Request):
     """Get tracking script that clients can embed in their website"""
     script = """
- 
     alert("Tracking script loaded!");
 
-        console.log('Tracking script loaded'); // Debug log
+    console.log('Tracking script loaded'); // Debug log
+    
+    (function() {
+        console.log('Tracking script initialized'); // Debug log
         
-        (function() {
-            console.log('Tracking script initialized'); // Debug log
-            
-            // Configuration
-            const TRACKING_ENDPOINT = 'http://localhost:8000/api/v1/tracking/track';
-            
-            // Function to get current page data
-            function getPageData() {
-                const data = {
-                    url: window.location.href,
-                    referrer: document.referrer,
-                    title: document.title,
-                    userAgent: navigator.userAgent,
-                    language: navigator.language,
-                    screenWidth: window.screen.width,
-                    screenHeight: window.screen.height
-                };
-                console.log('Page data:', data); // Debug log
-                return data;
+        // Configuration
+        const TRACKING_ENDPOINT = 'http://localhost:8000/api/v1/tracking/track';
+        const SESSION_TIMEOUT = 30 * 60 * 1000; // 30 minutes in milliseconds
+        const PAGE_CHANGE_INTERVAL = 1000; // Check for page changes every second
+        let sessionId = localStorage.getItem('tracking_session_id') || null;
+        let lastActivity = Date.now();
+        let sessionStartTime = Date.now();
+        let lastPageUrl = window.location.href;
+        let pageStartTime = Date.now();
+        let pageViewCount = 0;
+        
+        // Function to detect device type
+        function getDeviceType() {
+            const ua = navigator.userAgent;
+            if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
+                return "tablet";
             }
-            
-            // Function to send tracking data
-            function trackPageView() {
-                console.log('Attempting to track page view...'); // Debug log
-                const data = getPageData();
-                
-                // Create a visible element to show tracking status
-                const statusDiv = document.createElement('div');
-                statusDiv.style.position = 'fixed';
-                statusDiv.style.bottom = '10px';
-                statusDiv.style.right = '10px';
-                statusDiv.style.padding = '10px';
-                statusDiv.style.background = '#f0f0f0';
-                statusDiv.style.border = '1px solid #ccc';
-                statusDiv.style.zIndex = '9999';
-                statusDiv.textContent = 'Tracking...';
-                document.body.appendChild(statusDiv);
-                
-                fetch(TRACKING_ENDPOINT, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Accept': 'application/json',
-                    },
-                    mode: 'cors',
-                    credentials: 'omit',
-                    body: JSON.stringify(data)
-                })
-                .then(response => {
-                    console.log('Response received:', response); // Debug log
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    console.log('Tracking successful:', data);
-                    statusDiv.textContent = 'Tracking successful!';
-                    statusDiv.style.background = '#dff0d8';
-                    setTimeout(() => statusDiv.remove(), 3000);
-                })
-                .catch(error => {
-                    console.error('Tracking error:', error);
-                    statusDiv.textContent = 'Tracking failed: ' + error.message;
-                    statusDiv.style.background = '#f2dede';
-                    setTimeout(() => statusDiv.remove(), 5000);
-                });
+            if (/Mobile|Android|iP(hone|od)|IEMobile|BlackBerry|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(ua)) {
+                return "mobile";
             }
+            return "desktop";
+        }
+
+        // Function to detect browser
+        function getBrowser() {
+            const ua = navigator.userAgent;
+            let browser = "Unknown";
             
-            // Track initial page view
-            console.log('Tracking initial page view...'); // Debug log
-            trackPageView();
+            if (ua.includes("Firefox")) browser = "Firefox";
+            else if (ua.includes("Chrome")) browser = "Chrome";
+            else if (ua.includes("Safari")) browser = "Safari";
+            else if (ua.includes("Edge")) browser = "Edge";
+            else if (ua.includes("MSIE") || ua.includes("Trident/")) browser = "Internet Explorer";
+            else if (ua.includes("Opera")) browser = "Opera";
             
-            // Track page changes
-            window.addEventListener('popstate', () => {
-                console.log('Page changed, tracking...'); // Debug log
-                trackPageView();
+            return browser;
+        }
+
+        // Function to detect OS
+        function getOS() {
+            const ua = navigator.userAgent;
+            let os = "Unknown";
+            
+            if (ua.includes("Windows")) os = "Windows";
+            else if (ua.includes("Mac")) os = "MacOS";
+            else if (ua.includes("Linux")) os = "Linux";
+            else if (ua.includes("Android")) os = "Android";
+            else if (ua.includes("iOS")) os = "iOS";
+            
+            return os;
+        }
+        
+        // Function to get current page data
+        function getPageData() {
+            const url = new URL(window.location.href);
+            const currentTime = Date.now();
+            const pageDuration = (currentTime - pageStartTime) / 1000; // in seconds
+            
+            const data = {
+                domain: url.hostname,
+                page_path: url.pathname + url.search + url.hash,
+                title: document.title,
+                userAgent: navigator.userAgent,
+                deviceType: getDeviceType(),
+                deviceBrowser: getBrowser(),
+                deviceOS: getOS(),
+                referrer: document.referrer,
+                language: navigator.language,
+                screenWidth: window.screen.width,
+                screenHeight: window.screen.height,
+                sessionId: sessionId,
+                sessionStartTime: sessionStartTime,
+                currentTime: currentTime,
+                pageStartTime: pageStartTime,
+                pageDuration: pageDuration,
+                pageViewCount: pageViewCount,
+                isPageChange: window.location.href !== lastPageUrl
+            };
+            console.log('Page data:', data); // Debug log
+            return data;
+        }
+        
+        // Function to send tracking data
+        function trackPageView(isSessionEnd = false, isPageChange = false) {
+            console.log('Attempting to track page view...'); // Debug log
+            const data = getPageData();
+            data.isSessionEnd = isSessionEnd;
+            data.isPageChange = isPageChange;
+            
+            // Create a visible element to show tracking status
+            const statusDiv = document.createElement('div');
+            statusDiv.style.position = 'fixed';
+            statusDiv.style.bottom = '10px';
+            statusDiv.style.right = '10px';
+            statusDiv.style.padding = '10px';
+            statusDiv.style.background = '#f0f0f0';
+            statusDiv.style.border = '1px solid #ccc';
+            statusDiv.style.zIndex = '9999';
+            statusDiv.textContent = 'Tracking...';
+            document.body.appendChild(statusDiv);
+            
+            fetch(TRACKING_ENDPOINT, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
+                },
+                mode: 'cors',
+                credentials: 'omit',
+                body: JSON.stringify(data)
+            })
+            .then(response => {
+                console.log('Response received:', response); // Debug log
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log('Tracking successful:', data);
+                if (data.sessionId && !sessionId) {
+                    sessionId = data.sessionId;
+                    localStorage.setItem('tracking_session_id', sessionId);
+                }
+                statusDiv.textContent = 'Tracking successful!';
+                statusDiv.style.background = '#dff0d8';
+                setTimeout(() => statusDiv.remove(), 3000);
+            })
+            .catch(error => {
+                console.error('Tracking error:', error);
+                statusDiv.textContent = 'Tracking failed: ' + error.message;
+                statusDiv.style.background = '#f2dede';
+                setTimeout(() => statusDiv.remove(), 5000);
             });
-            
-            // Track when user leaves the page
-            window.addEventListener('beforeunload', () => {
-                console.log('User leaving page, tracking...'); // Debug log
-                trackPageView();
-            });
-            
-            console.log('Tracking script setup complete'); // Debug log
-        })();
-  
+        }
+
+        // Function to check session timeout
+        function checkSessionTimeout() {
+            const now = Date.now();
+            if (now - lastActivity > SESSION_TIMEOUT) {
+                // Session timed out
+                trackPageView(true, false);
+                sessionId = null;
+                localStorage.removeItem('tracking_session_id');
+                sessionStartTime = now;
+            }
+        }
+
+        // Function to check for page changes
+        function checkPageChange() {
+            if (window.location.href !== lastPageUrl) {
+                // Page has changed
+                trackPageView(false, true);
+                lastPageUrl = window.location.href;
+                pageStartTime = Date.now();
+                pageViewCount++;
+            }
+        }
+        
+        // Update last activity time on user interaction
+        function updateLastActivity() {
+            lastActivity = Date.now();
+        }
+        
+        // Add event listeners for user activity
+        ['click', 'scroll', 'keypress', 'mousemove'].forEach(event => {
+            document.addEventListener(event, updateLastActivity);
+        });
+        
+        // Check session timeout every minute
+        setInterval(checkSessionTimeout, 60000);
+        
+        // Check for page changes every second
+        setInterval(checkPageChange, PAGE_CHANGE_INTERVAL);
+        
+        // Track initial page view
+        console.log('Tracking initial page view...'); // Debug log
+        pageViewCount++;
+        trackPageView(false, true);
+        
+        // Track when user leaves the page
+        window.addEventListener('beforeunload', () => {
+            console.log('User leaving page, tracking...'); // Debug log
+            trackPageView(true, false);
+        });
+        
+        console.log('Tracking script setup complete'); // Debug log
+    })();
     """
     
     return Response(content=script, media_type="application/javascript")
@@ -173,23 +276,48 @@ async def track_page_view(request: Request):
         # Get client IP
         ip = request.client.host
         
+        # Handle session
+        session_id = data.get("sessionId")
+        is_session_end = data.get("isSessionEnd", False)
+        is_page_change = data.get("isPageChange", False)
+        
+        if not session_id:
+            session_id = str(uuid.uuid4())
+        
         # Create tracking data
         tracking_data = {
             "ip_address": ip,
-            "page_url": data.get("url"),
+            "domain": data.get("domain"),
+            "page_path": data.get("page_path"),
             "page_title": data.get("title"),
             "user_agent": data.get("userAgent"),
+            "device_type": data.get("deviceType"),
+            "device_browser": data.get("deviceBrowser"),
+            "device_os": data.get("deviceOS"),
             "referrer": data.get("referrer"),
             "language": data.get("language"),
             "screen_resolution": f"{data.get('screenWidth')}x{data.get('screenHeight')}",
-            "timestamp": datetime.utcnow()
+            "timestamp": datetime.utcnow(),
+            "session_id": session_id,
+            "session_start": datetime.fromtimestamp(data.get("sessionStartTime") / 1000),
+            "is_session_end": is_session_end,
+            "is_page_change": is_page_change,
+            "page_duration": data.get("pageDuration"),
+            "page_view_count": data.get("pageViewCount")
         }
+        
+        if is_session_end:
+            tracking_data["session_end"] = datetime.fromtimestamp(data.get("currentTime") / 1000)
+            tracking_data["session_duration"] = (tracking_data["session_end"] - tracking_data["session_start"]).total_seconds()
         
         # Store in MongoDB
         await tracking_service.collection.insert_one(tracking_data)
         print("Tracking data stored successfully") # Server-side debug log
         
-        return format_response(message="Tracking data received successfully")
+        return format_response(
+            message="Tracking data received successfully",
+            data={"sessionId": session_id}
+        )
     except Exception as e:
         print(f"Tracking error: {str(e)}") # Server-side debug log
         return format_response(message=str(e), status=False) 
