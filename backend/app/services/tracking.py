@@ -1,6 +1,6 @@
 from app.db.mongodb import mongodb
 from app.models.tracking import TrackingData
-from fastapi import Request
+from fastapi import Request, HTTPException
 import uuid
 
 class TrackingService:
@@ -10,9 +10,15 @@ class TrackingService:
 
     async def initialize(self):
         """Initialize database connection"""
-        if not self.db:
-            self.db = mongodb.get_db()
-            self.collection = self.db.tracking_data
+        try:
+            if self.db is None:
+                await mongodb.connect_to_mongodb()
+                self.db = mongodb.get_db()
+                if self.db is None:
+                    raise HTTPException(status_code=500, detail="Failed to connect to database")
+                self.collection = self.db.tracking_data
+        except Exception as e:
+            raise HTTPException(status_code=500, detail=f"Database initialization error: {str(e)}")
 
     async def track_page_view(self, request: Request, page_url: str, client_type: str):
         # Initialize if not already done

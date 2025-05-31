@@ -1,9 +1,11 @@
-from fastapi import APIRouter, Request, Response
+from fastapi import APIRouter, Request, Response, HTTPException
 from app.services.tracking import tracking_service
 from app.utils.helpers import format_response
 import json
 from datetime import datetime
 import uuid
+from typing import List, Dict, Any
+from bson import ObjectId
 
 router = APIRouter()
 
@@ -320,4 +322,113 @@ async def track_page_view(request: Request):
         )
     except Exception as e:
         print(f"Tracking error: {str(e)}") # Server-side debug log
-        return format_response(message=str(e), status=False) 
+        return format_response(message=str(e), status=False)
+
+@router.get("/tracking/domains")
+async def get_unique_domains():
+    """Get all unique domains from the tracking data"""
+    try:
+        # Initialize tracking service
+        await tracking_service.initialize()
+        
+        # Get unique domains using MongoDB aggregation
+        pipeline = [
+            {"$group": {"_id": "$domain"}},
+            {"$sort": {"_id": 1}}
+        ]
+        
+        domains = await tracking_service.collection.aggregate(pipeline).to_list(None)
+        
+        # Extract domain names from the result
+        domain_list = [doc["_id"] for doc in domains if doc["_id"]]
+        
+        return format_response(
+            message="Domains retrieved successfully",
+            data={"domains": domain_list}
+        )
+    except Exception as e:
+        
+        raise HTTPException(status_code=500, detail=str(e))
+
+@router.get("/tracking/domain/{domain}")
+async def get_domain_analytics(domain: str):
+    """Get detailed analytics for a specific domain"""
+    try:
+        # Initialize tracking service
+        await tracking_service.initialize()
+        
+        # Get all tracking data for the domain
+        domain_data = await tracking_service.collection.find({"domain": domain}).to_list(None)
+        
+        if not domain_data:
+            raise HTTPException(status_code=404, detail=f"No data found for domain: {domain}")
+        
+        # Calculate various metrics
+        analytics = {
+            "domain": domain,
+            "total_page_views": len(domain_data),
+            "unique_visitors": len(set(doc["ip_address"] for doc in domain_data)),
+            "unique_sessions": len(set(doc["session_id"] for doc in domain_data)),
+            "devices": {
+                "mobile": len([doc for doc in domain_data if doc["device_type"] == "mobile"]),
+                "tablet": len([doc for doc in domain_data if doc["device_type"] == "tablet"]),
+                "desktop": len([doc for doc in domain_data if doc["device_type"] == "desktop"])
+            },
+            "browsers": {},
+            "operating_systems": {},
+            "screen_resolutions": {},
+            "pages": {},
+            "average_session_duration": 0,
+            "total_sessions": 0
+        }
+        
+        # Calculate browser and OS distribution
+        for doc in domain_data:
+            # Browser stats
+            browser = doc.get("device_browser", "Unknown")
+            analytics["browsers"][browser] = analytics["browsers"].get(browser, 0) + 1
+            
+            # OS stats
+            os = doc.get("device_os", "Unknown")
+            analytics["operating_systems"][os] = analytics["operating_systems"].get(os, 0) + 1
+            
+            # Screen resolution stats
+            resolution = doc.get("screen_resolution", "Unknown")
+            analytics["screen_resolutions"][resolution] = analytics["screen_resolutions"].get(resolution, 0) + 1
+            
+            # Page stats
+            page = doc.get("page_path", "Unknown")
+            analytics["pages"][page] = analytics["pages"].get(page, 0) + 1
+            
+            # Session duration stats
+            if doc.get("session_duration"):
+                analytics["total_sessions"] += 1
+                analytics["average_session_duration"] += doc["session_duration"]
+        
+        # Calculate average session duration
+        if analytics["total_sessions"] > 0:
+            analytics["average_session_duration"] = round(
+                analytics["average_session_duration"] / analytics["total_sessions"], 
+                2
+            )
+        
+        # Sort pages by views
+        analytics["pages"] = dict(sorted(
+            analytics["pages"].items(), 
+            key=lambda x: x[1], 
+            reverse=True
+        ))
+        
+        # Get most recent activity
+        latest_activity = max(doc["timestamp"] for doc in domain_data)
+        analytics["latest_activity"] = latest_activity
+        
+        return format_response(
+            message=f"Analytics retrieved successfully for domain: {domain}",
+            data=analytics
+        )
+    except HTTPException as he:
+        raise he
+    except Exception as e:
+        print(e)    
+        raise HTTPException(status_code=500, detail=str(e)) 
