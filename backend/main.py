@@ -1,13 +1,17 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, WebSocket
 from fastapi.middleware.cors import CORSMiddleware
 from app.api.v1.endpoints import test, tracking
 from app.db.mongodb import mongodb
+from typing import List
 
 app = FastAPI(
     title="FastAPI Template",
     description="A template FastAPI application",
     version="1.0.0"
 )
+
+# Store active WebSocket connections
+active_connections: List[WebSocket] = []
 
 # Configure CORS
 app.add_middleware(
@@ -26,6 +30,34 @@ app.include_router(tracking.router, prefix="/api/v1", tags=["tracking"])
 @app.get("/")
 async def root():
     return {"message": "Welcome to FastAPI Template"}
+
+async def broadcast_active_connections():
+    """Broadcast the number of active connections to all clients"""
+    for connection in active_connections:
+        try:
+            await connection.send_json({"activeConnections": len(active_connections)})
+        except:
+            active_connections.remove(connection)
+
+@app.websocket("/ws/counter")
+async def websocket_endpoint(websocket: WebSocket):
+    await websocket.accept()
+    active_connections.append(websocket)
+    # Broadcast initial count to all clients
+    await broadcast_active_connections()
+    
+    try:
+        while True:
+            # Keep the connection alive
+            await websocket.receive_text()
+    except:
+        active_connections.remove(websocket)
+        # Broadcast updated count when a client disconnects
+        await broadcast_active_connections()
+
+@app.get("/api/v1/active-connections")
+async def get_active_connections():
+    return {"activeConnections": len(active_connections)}
 
 @app.on_event("startup")
 async def startup_db_client():
