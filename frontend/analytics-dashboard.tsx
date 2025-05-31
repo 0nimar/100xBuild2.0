@@ -45,6 +45,11 @@ interface DomainData {
   average_session_duration: number
   total_sessions: number
   latest_activity: string
+  bounce_rate: number
+  pages_per_session: number
+  referrers: Record<string, number>
+  entry_pages: Record<string, number>
+  exit_pages: Record<string, number>
 }
 
 const COLORS = [
@@ -138,11 +143,29 @@ export default function AnalyticsDashboard() {
   }
 
   const deviceData = analyticsData?.devices
-    ? [
-        { name: "Desktop", value: analyticsData.devices.desktop || 0, fill: COLORS[0], icon: Monitor },
-        { name: "Mobile", value: analyticsData.devices.mobile || 0, fill: COLORS[1], icon: Smartphone },
-        { name: "Tablet", value: analyticsData.devices.tablet || 0, fill: COLORS[2], icon: Tablet },
-      ]
+    ? (() => {
+        const total = Object.values(analyticsData.devices).reduce((sum, count) => sum + count, 0);
+        return [
+          { 
+            name: "Desktop", 
+            value: Math.round((analyticsData.devices.desktop || 0) / total * 100), 
+            fill: COLORS[0], 
+            icon: Monitor 
+          },
+          { 
+            name: "Mobile", 
+            value: Math.round((analyticsData.devices.mobile || 0) / total * 100), 
+            fill: COLORS[1], 
+            icon: Smartphone 
+          },
+          { 
+            name: "Tablet", 
+            value: Math.round((analyticsData.devices.tablet || 0) / total * 100), 
+            fill: COLORS[2], 
+            icon: Tablet 
+          },
+        ];
+      })()
     : []
 
   return (
@@ -264,6 +287,37 @@ export default function AnalyticsDashboard() {
                   </p>
                 </CardContent>
               </Card>
+
+              {/* New Metrics */}
+              <Card className="bg-gradient-to-br from-pink-50 to-pink-100 dark:from-pink-950 dark:to-pink-900 border-pink-200 dark:border-pink-800">
+                <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+                  <CardTitle className="text-sm font-medium">Bounce Rate</CardTitle>
+                  <Activity className="h-4 w-4 text-pink-600" />
+                </CardHeader>
+                <CardContent>
+                  <div className="text-2xl font-bold text-pink-700 dark:text-pink-300">
+                    {analyticsData.bounce_rate?.toFixed(1)}%
+                  </div>
+                  <p className="text-xs text-pink-600 dark:text-pink-400 mt-1">
+                    Single-page sessions
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-gradient-to-br from-indigo-50 to-indigo-100 dark:from-indigo-950 dark:to-indigo-900 border-indigo-200 dark:border-indigo-800">
+                <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+                  <CardTitle className="text-sm font-medium">Pages/Session</CardTitle>
+                  <Activity className="h-4 w-4 text-indigo-600" />
+                </CardHeader>
+                <CardContent>
+                  <div className="text-2xl font-bold text-indigo-700 dark:text-indigo-300">
+                    {analyticsData.pages_per_session?.toFixed(1)}
+                  </div>
+                  <p className="text-xs text-indigo-600 dark:text-indigo-400 mt-1">
+                    Average pages viewed
+                  </p>
+                </CardContent>
+              </Card>
             </div>
 
             {/* Charts Section */}
@@ -296,6 +350,7 @@ export default function AnalyticsDashboard() {
                           outerRadius={100}
                           paddingAngle={5}
                           dataKey="value"
+                          label={({ name, value }) => `${name}: ${value}%`}
                         >
                           {deviceData.map((entry, index) => (
                             <Cell key={`cell-${index}`} fill={entry.fill} />
@@ -345,29 +400,33 @@ export default function AnalyticsDashboard() {
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-4">
-                    {Object.entries(analyticsData.operating_systems).map(([os, count], index) => (
-                      <div key={os} className="flex items-center justify-between">
-                        <div className="flex items-center gap-3">
-                          <div
-                            className="w-3 h-3 rounded-full"
-                            style={{ backgroundColor: COLORS[index % COLORS.length] }}
-                          />
-                          <span className="font-medium">{os}</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <div className="w-24 bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                    {Object.entries(analyticsData.operating_systems).map(([os, count], index) => {
+                      const total = Object.values(analyticsData.operating_systems).reduce((sum, val) => sum + val, 0);
+                      const percentage = Math.round((count / total) * 100);
+                      return (
+                        <div key={os} className="flex items-center justify-between">
+                          <div className="flex items-center gap-3">
                             <div
-                              className="h-2 rounded-full transition-all duration-500"
-                              style={{
-                                width: `${(count / Math.max(...Object.values(analyticsData.operating_systems))) * 100}%`,
-                                backgroundColor: COLORS[index % COLORS.length],
-                              }}
+                              className="w-3 h-3 rounded-full"
+                              style={{ backgroundColor: COLORS[index % COLORS.length] }}
                             />
+                            <span className="font-medium">{os}</span>
                           </div>
-                          <span className="text-sm font-semibold w-8 text-right">{count}%</span>
+                          <div className="flex items-center gap-2">
+                            <div className="w-24 bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                              <div
+                                className="h-2 rounded-full transition-all duration-500"
+                                style={{
+                                  width: `${percentage}%`,
+                                  backgroundColor: COLORS[index % COLORS.length],
+                                }}
+                              />
+                            </div>
+                            <span className="text-sm font-semibold w-8 text-right">{percentage}%</span>
+                          </div>
                         </div>
-                      </div>
-                    ))}
+                      );
+                    })}
                   </div>
                 </CardContent>
               </Card>
@@ -379,29 +438,33 @@ export default function AnalyticsDashboard() {
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-4">
-                    {Object.entries(analyticsData.screen_resolutions).map(([resolution, count], index) => (
-                      <div key={resolution} className="flex items-center justify-between">
-                        <div className="flex items-center gap-3">
-                          <div
-                            className="w-3 h-3 rounded-full"
-                            style={{ backgroundColor: COLORS[index % COLORS.length] }}
-                          />
-                          <span className="font-medium">{resolution}</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <div className="w-24 bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                    {Object.entries(analyticsData.screen_resolutions).map(([resolution, count], index) => {
+                      const total = Object.values(analyticsData.screen_resolutions).reduce((sum, val) => sum + val, 0);
+                      const percentage = Math.round((count / total) * 100);
+                      return (
+                        <div key={resolution} className="flex items-center justify-between">
+                          <div className="flex items-center gap-3">
                             <div
-                              className="h-2 rounded-full transition-all duration-500"
-                              style={{
-                                width: `${(count / Math.max(...Object.values(analyticsData.screen_resolutions))) * 100}%`,
-                                backgroundColor: COLORS[index % COLORS.length],
-                              }}
+                              className="w-3 h-3 rounded-full"
+                              style={{ backgroundColor: COLORS[index % COLORS.length] }}
                             />
+                            <span className="font-medium">{resolution}</span>
                           </div>
-                          <span className="text-sm font-semibold w-8 text-right">{count}%</span>
+                          <div className="flex items-center gap-2">
+                            <div className="w-24 bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                              <div
+                                className="h-2 rounded-full transition-all duration-500"
+                                style={{
+                                  width: `${percentage}%`,
+                                  backgroundColor: COLORS[index % COLORS.length],
+                                }}
+                              />
+                            </div>
+                            <span className="text-sm font-semibold w-8 text-right">{percentage}%</span>
+                          </div>
                         </div>
-                      </div>
-                    ))}
+                      );
+                    })}
                   </div>
                 </CardContent>
               </Card>
@@ -432,6 +495,130 @@ export default function AnalyticsDashboard() {
                 </ChartContainer>
               </CardContent>
             </Card>
+
+            {/* Traffic Sources */}
+            <Card className="bg-white dark:bg-slate-800">
+              <CardHeader>
+                <CardTitle>Traffic Sources</CardTitle>
+                <CardDescription>Where your visitors are coming from</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  {Object.entries(analyticsData.referrers || {}).map(([source, count], index) => {
+                    const total = Object.values(analyticsData.referrers || {}).reduce((sum, val) => sum + val, 0);
+                    const percentage = Math.round((count / total) * 100);
+                    return (
+                      <div key={source} className="flex items-center justify-between">
+                        <div className="flex items-center gap-3">
+                          <div
+                            className="w-3 h-3 rounded-full"
+                            style={{ backgroundColor: COLORS[index % COLORS.length] }}
+                          />
+                          <span className="font-medium">{source || 'Direct'}</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <div className="w-24 bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                            <div
+                              className="h-2 rounded-full transition-all duration-500"
+                              style={{
+                                width: `${percentage}%`,
+                                backgroundColor: COLORS[index % COLORS.length],
+                              }}
+                            />
+                          </div>
+                          <span className="text-sm font-semibold w-8 text-right">{percentage}%</span>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Entry & Exit Pages */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              <Card className="bg-white dark:bg-slate-800">
+                <CardHeader>
+                  <CardTitle>Top Entry Pages</CardTitle>
+                  <CardDescription>Where visitors first land</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-4">
+                    {Object.entries(analyticsData.entry_pages || {})
+                      .sort(([, a], [, b]) => b - a)
+                      .slice(0, 5)
+                      .map(([page, count], index) => {
+                        const total = Object.values(analyticsData.entry_pages || {}).reduce((sum, val) => sum + val, 0);
+                        const percentage = Math.round((count / total) * 100);
+                        return (
+                          <div key={page} className="flex items-center justify-between">
+                            <div className="flex items-center gap-3">
+                              <div
+                                className="w-3 h-3 rounded-full"
+                                style={{ backgroundColor: COLORS[index % COLORS.length] }}
+                              />
+                              <span className="font-medium truncate max-w-[200px]">{page}</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                              <div className="w-24 bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                                <div
+                                  className="h-2 rounded-full transition-all duration-500"
+                                  style={{
+                                    width: `${percentage}%`,
+                                    backgroundColor: COLORS[index % COLORS.length],
+                                  }}
+                                />
+                              </div>
+                              <span className="text-sm font-semibold w-8 text-right">{percentage}%</span>
+                            </div>
+                          </div>
+                        );
+                      })}
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-white dark:bg-slate-800">
+                <CardHeader>
+                  <CardTitle>Top Exit Pages</CardTitle>
+                  <CardDescription>Where visitors leave</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-4">
+                    {Object.entries(analyticsData.exit_pages || {})
+                      .sort(([, a], [, b]) => b - a)
+                      .slice(0, 5)
+                      .map(([page, count], index) => {
+                        const total = Object.values(analyticsData.exit_pages || {}).reduce((sum, val) => sum + val, 0);
+                        const percentage = Math.round((count / total) * 100);
+                        return (
+                          <div key={page} className="flex items-center justify-between">
+                            <div className="flex items-center gap-3">
+                              <div
+                                className="w-3 h-3 rounded-full"
+                                style={{ backgroundColor: COLORS[index % COLORS.length] }}
+                              />
+                              <span className="font-medium truncate max-w-[200px]">{page}</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                              <div className="w-24 bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                                <div
+                                  className="h-2 rounded-full transition-all duration-500"
+                                  style={{
+                                    width: `${percentage}%`,
+                                    backgroundColor: COLORS[index % COLORS.length],
+                                  }}
+                                />
+                              </div>
+                              <span className="text-sm font-semibold w-8 text-right">{percentage}%</span>
+                            </div>
+                          </div>
+                        );
+                      })}
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
           </>
         )}
 

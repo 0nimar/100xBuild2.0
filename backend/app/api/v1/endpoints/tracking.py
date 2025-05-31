@@ -6,6 +6,7 @@ from datetime import datetime
 import uuid
 from typing import List, Dict, Any
 from bson import ObjectId
+from urllib.parse import urlparse
 
 router = APIRouter()
 
@@ -384,8 +385,50 @@ async def get_domain_analytics(domain: str):
             "screen_resolutions": {},
             "pages": {},
             "average_session_duration": 0,
-            "total_sessions": 0
+            "total_sessions": 0,
+            "referrers": {},
+            "entry_pages": {},
+            "exit_pages": {},
+            "bounce_rate": 0,
+            "pages_per_session": 0
         }
+        
+        # Group data by session
+        sessions = {}
+        for doc in domain_data:
+            session_id = doc["session_id"]
+            if session_id not in sessions:
+                sessions[session_id] = []
+            sessions[session_id].append(doc)
+        
+        # Calculate session-based metrics
+        total_pages = 0
+        bounced_sessions = 0
+        
+        for session_id, session_data in sessions.items():
+            # Sort session data by timestamp
+            session_data.sort(key=lambda x: x["timestamp"])
+            
+            # Track entry page
+            entry_page = session_data[0]["page_path"]
+            analytics["entry_pages"][entry_page] = analytics["entry_pages"].get(entry_page, 0) + 1
+            
+            # Track exit page
+            exit_page = session_data[-1]["page_path"]
+            analytics["exit_pages"][exit_page] = analytics["exit_pages"].get(exit_page, 0) + 1
+            
+            # Count pages in session
+            pages_in_session = len(session_data)
+            total_pages += pages_in_session
+            
+            # Check for bounce (single page session)
+            if pages_in_session == 1:
+                bounced_sessions += 1
+        
+        # Calculate bounce rate
+        if len(sessions) > 0:
+            analytics["bounce_rate"] = round((bounced_sessions / len(sessions)) * 100, 1)
+            analytics["pages_per_session"] = round(total_pages / len(sessions), 1)
         
         # Calculate browser and OS distribution
         for doc in domain_data:
@@ -404,6 +447,16 @@ async def get_domain_analytics(domain: str):
             # Page stats
             page = doc.get("page_path", "Unknown")
             analytics["pages"][page] = analytics["pages"].get(page, 0) + 1
+            
+            # Referrer stats
+            referrer = doc.get("referrer", "Direct")
+            if referrer:
+                try:
+                    parsed = urlparse(referrer)
+                    referrer = parsed.netloc or "Direct"
+                except:
+                    referrer = "Direct"
+            analytics["referrers"][referrer] = analytics["referrers"].get(referrer, 0) + 1
             
             # Session duration stats
             if doc.get("session_duration"):

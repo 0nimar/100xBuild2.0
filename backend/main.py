@@ -33,11 +33,12 @@ async def root():
 
 async def broadcast_active_connections():
     """Broadcast the number of active connections to all clients"""
-    for connection in active_connections:
+    for connection in active_connections[:]:  # Create a copy of the list to safely modify it
         try:
             await connection.send_json({"activeConnections": len(active_connections)})
         except:
-            active_connections.remove(connection)
+            if connection in active_connections:  # Check if connection still exists
+                active_connections.remove(connection)
 
 @app.websocket("/ws/counter")
 async def websocket_endpoint(websocket: WebSocket):
@@ -51,7 +52,8 @@ async def websocket_endpoint(websocket: WebSocket):
             # Keep the connection alive
             await websocket.receive_text()
     except:
-        active_connections.remove(websocket)
+        if websocket in active_connections:  # Check if websocket still exists
+            active_connections.remove(websocket)
         # Broadcast updated count when a client disconnects
         await broadcast_active_connections()
 
