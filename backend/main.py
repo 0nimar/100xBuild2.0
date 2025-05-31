@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.api.v1.endpoints import test
+from app.api.v1.endpoints import test, tracking
 from app.db.mongodb import mongodb
 
 app = FastAPI(
@@ -14,12 +14,14 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],  # In production, replace with specific origins
     allow_credentials=True,
-    allow_methods=["*"],
+    allow_methods=["GET", "POST", "OPTIONS"],
     allow_headers=["*"],
+    expose_headers=["*"]
 )
 
 # Include routers
 app.include_router(test.router, prefix="/api/v1", tags=["test"])
+app.include_router(tracking.router, prefix="/api/v1", tags=["tracking"])
 
 @app.get("/")
 async def root():
