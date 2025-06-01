@@ -30,6 +30,8 @@ import {
 } from "@/components/ui/chart"
 import { Globe, Users, Eye, Clock, Smartphone, Monitor, Tablet, RefreshCw, TrendingUp, Activity } from "lucide-react"
 import DataCard from "./data-card"
+import ChatDrawer from "./chat-drawer"
+import ChatAction from "./chat-action"
 
 interface DomainData {
   domain: string
@@ -93,7 +95,7 @@ export default function AnalyticsDashboard() {
     to: new Date(),
   })
   const [activeFilters, setActiveFilters] = useState<ActiveFilters>({})
-
+  const [aiMode,setAiMode]=useState(false)
   // Real API calls
   const fetchDomains = async () => {
     try {
@@ -217,7 +219,7 @@ export default function AnalyticsDashboard() {
   }
 
   return (
-    <div className="bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800 w-full h-full">
+    <div className="bg-transparent w-full h-full">
       <div className="container space-y-8">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
@@ -300,7 +302,7 @@ export default function AnalyticsDashboard() {
               </div>
               <div className="text-sm text-muted-foreground">Last updated: {lastUpdated.toLocaleTimeString()}</div>
             </div>
-
+            <ChatDrawer props={{ triggerEl: <ChatAction props={{aiMode:aiMode ,setAiMode:setAiMode}}/>, open: aiMode, onOpenchange: setAiMode }}/>
             {/* Key Metrics */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               <DataCard 
