@@ -1,0 +1,2902 @@
+[
+  {
+    "_id": {
+      "$oid": "7c9dc61185d64b6f844693aa"
+    },
+    "ip_address": "192.168.180.240",
+    "country": "United States",
+    "city": "New York",
+    "domain": "example.com",
+    "page_path": "/about",
+    "page_title": "Pricing",
+    "user_agent": "Mozilla/5.0 (iOS NT 10.0; Win64; x64; rv:81.0) Gecko/20100101 Chrome/97.0",
+    "device_type": "tablet",
+    "device_browser": "Firefox",
+    "device_os": "macOS",
+    "referrer": "",
+    "language": "es-ES",
+    "screen_resolution": "1920x1080",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.936769Z"
+    },
+    "session_id": "aaa08ba1-5e47-4464-bdbb-66897186b81a",
+    "session_start": {
+      "$date": "2025-06-01T09:48:48.936769Z"
+    },
+    "is_session_end": true,
+    "is_page_change": false,
+    "page_duration": 298,
+    "page_view_count": 7
+  },
+  {
+    "_id": {
+      "$oid": "21665aa875484a1d8ba096ef"
+    },
+    "ip_address": "192.168.18.237",
+    "country": "UK",
+    "city": "London",
+    "domain": "mysite.io",
+    "page_path": "/about",
+    "page_title": "About Us",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:104.0) Gecko/20100101 Edge/106.0",
+    "device_type": "tablet",
+    "device_browser": "Edge",
+    "device_os": "macOS",
+    "referrer": "",
+    "language": "en-US",
+    "screen_resolution": "1536x864",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.937260Z"
+    },
+    "session_id": "f1c98ca0-897f-4ada-96b4-fcb3045d3b6e",
+    "session_start": {
+      "$date": "2025-06-01T10:37:48.937260Z"
+    },
+    "is_session_end": false,
+    "is_page_change": true,
+    "page_duration": 274,
+    "page_view_count": 9
+  },
+  {
+    "_id": {
+      "$oid": "ef709fb1d2174870ab65ca48"
+    },
+    "ip_address": "192.168.99.242",
+    "country": "United States",
+    "city": "New York",
+    "domain": "mysite.io",
+    "page_path": "/",
+    "page_title": "Dashboard",
+    "user_agent": "Mozilla/5.0 (Linux NT 10.0; Win64; x64; rv:140.0) Gecko/20100101 Edge/129.0",
+    "device_type": "mobile",
+    "device_browser": "Firefox",
+    "device_os": "macOS",
+    "referrer": "https://google.com",
+    "language": "en-US",
+    "screen_resolution": "1440x900",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.937606Z"
+    },
+    "session_id": "853635cb-64b5-48a1-950d-7ddc864dbd0a",
+    "session_start": {
+      "$date": "2025-06-01T09:37:48.937606Z"
+    },
+    "is_session_end": false,
+    "is_page_change": false,
+    "page_duration": 116,
+    "page_view_count": 5
+  },
+  {
+    "_id": {
+      "$oid": "bd3ae40f7fc84d18b726623d"
+    },
+    "ip_address": "192.168.187.6",
+    "country": "United States",
+    "city": "New York",
+    "domain": "example.com",
+    "page_path": "/pricing",
+    "page_title": "Dashboard",
+    "user_agent": "Mozilla/5.0 (macOS NT 10.0; Win64; x64; rv:136.0) Gecko/20100101 Firefox/92.0",
+    "device_type": "desktop",
+    "device_browser": "Edge",
+    "device_os": "Windows",
+    "referrer": "https://linkedin.com",
+    "language": "de-DE",
+    "screen_resolution": "1280x720",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.938154Z"
+    },
+    "session_id": "2ad52e13-2cbe-4820-8f9d-7af256984872",
+    "session_start": {
+      "$date": "2025-06-01T10:14:48.938154Z"
+    },
+    "is_session_end": true,
+    "is_page_change": false,
+    "page_duration": 140,
+    "page_view_count": 4
+  },
+  {
+    "_id": {
+      "$oid": "8efdd21316304a2281d53f2a"
+    },
+    "ip_address": "192.168.58.3",
+    "country": "Japan",
+    "city": "Tokyo",
+    "domain": "analytics.app",
+    "page_path": "/contact",
+    "page_title": "Pricing",
+    "user_agent": "Mozilla/5.0 (macOS NT 10.0; Win64; x64; rv:134.0) Gecko/20100101 Safari/127.0",
+    "device_type": "desktop",
+    "device_browser": "Chrome",
+    "device_os": "Android",
+    "referrer": "",
+    "language": "fr-FR",
+    "screen_resolution": "1920x1080",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.938202Z"
+    },
+    "session_id": "52547c78-ad52-409a-968c-43ca5e3db3cb",
+    "session_start": {
+      "$date": "2025-06-01T11:23:48.938202Z"
+    },
+    "is_session_end": false,
+    "is_page_change": true,
+    "page_duration": 118,
+    "page_view_count": 3
+  },
+  {
+    "_id": {
+      "$oid": "167e56a51c9c4592ba193f67"
+    },
+    "ip_address": "192.168.192.18",
+    "country": "India",
+    "city": "Mumbai",
+    "domain": "localhost",
+    "page_path": "/contact",
+    "page_title": "Dashboard",
+    "user_agent": "Mozilla/5.0 (macOS NT 10.0; Win64; x64; rv:105.0) Gecko/20100101 Edge/99.0",
+    "device_type": "tablet",
+    "device_browser": "Firefox",
+    "device_os": "macOS",
+    "referrer": "",
+    "language": "hi-IN",
+    "screen_resolution": "1366x768",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.938281Z"
+    },
+    "session_id": "42887dec-27c1-493e-9e2c-0b65c62c1779",
+    "session_start": {
+      "$date": "2025-06-01T11:28:48.938281Z"
+    },
+    "is_session_end": true,
+    "is_page_change": false,
+    "page_duration": 136,
+    "page_view_count": 1
+  },
+  {
+    "_id": {
+      "$oid": "21607ea7151a4b2fbdaf2a9c"
+    },
+    "ip_address": "192.168.5.188",
+    "country": "Canada",
+    "city": "Toronto",
+    "domain": "analytics.app",
+    "page_path": "/home",
+    "page_title": "Dashboard",
+    "user_agent": "Mozilla/5.0 (macOS NT 10.0; Win64; x64; rv:87.0) Gecko/20100101 Safari/130.0",
+    "device_type": "tablet",
+    "device_browser": "Edge",
+    "device_os": "Android",
+    "referrer": "https://linkedin.com",
+    "language": "en-US",
+    "screen_resolution": "1280x720",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.938404Z"
+    },
+    "session_id": "db2906f6-92c7-4418-bcd6-a823cf0e1ceb",
+    "session_start": {
+      "$date": "2025-06-01T09:30:48.938404Z"
+    },
+    "is_session_end": true,
+    "is_page_change": false,
+    "page_duration": 186,
+    "page_view_count": 10
+  },
+  {
+    "_id": {
+      "$oid": "4299ea9140d041c9ba509f10"
+    },
+    "ip_address": "192.168.155.68",
+    "country": "Japan",
+    "city": "Tokyo",
+    "domain": "example.com",
+    "page_path": "/pricing",
+    "page_title": "Dashboard",
+    "user_agent": "Mozilla/5.0 (Linux NT 10.0; Win64; x64; rv:88.0) Gecko/20100101 Safari/112.0",
+    "device_type": "mobile",
+    "device_browser": "Firefox",
+    "device_os": "Linux",
+    "referrer": "https://linkedin.com",
+    "language": "hi-IN",
+    "screen_resolution": "1920x1080",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.938649Z"
+    },
+    "session_id": "8edd6c43-56c2-4a13-b648-722a1b3bdcec",
+    "session_start": {
+      "$date": "2025-06-01T09:50:48.938649Z"
+    },
+    "is_session_end": false,
+    "is_page_change": false,
+    "page_duration": 23,
+    "page_view_count": 1
+  },
+  {
+    "_id": {
+      "$oid": "319fc88bf3df405792d8db78"
+    },
+    "ip_address": "192.168.206.42",
+    "country": "Germany",
+    "city": "Berlin",
+    "domain": "analytics.app",
+    "page_path": "/contact",
+    "page_title": "Contact",
+    "user_agent": "Mozilla/5.0 (Linux NT 10.0; Win64; x64; rv:96.0) Gecko/20100101 Safari/115.0",
+    "device_type": "mobile",
+    "device_browser": "Edge",
+    "device_os": "Android",
+    "referrer": "https://google.com",
+    "language": "en-US",
+    "screen_resolution": "1536x864",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.938722Z"
+    },
+    "session_id": "72490de3-b365-485a-8e93-51d3155ce9c4",
+    "session_start": {
+      "$date": "2025-06-01T11:03:48.938722Z"
+    },
+    "is_session_end": true,
+    "is_page_change": true,
+    "page_duration": 57,
+    "page_view_count": 4
+  },
+  {
+    "_id": {
+      "$oid": "3230f74769404137b01372e2"
+    },
+    "ip_address": "192.168.205.1",
+    "country": "UK",
+    "city": "London",
+    "domain": "analytics.app",
+    "page_path": "/pricing",
+    "page_title": "Home",
+    "user_agent": "Mozilla/5.0 (iOS NT 10.0; Win64; x64; rv:107.0) Gecko/20100101 Safari/115.0",
+    "device_type": "mobile",
+    "device_browser": "Firefox",
+    "device_os": "Linux",
+    "referrer": "https://google.com",
+    "language": "de-DE",
+    "screen_resolution": "1366x768",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.938768Z"
+    },
+    "session_id": "0c2ac3f0-898e-4f61-91f3-b9d1de04b1a4",
+    "session_start": {
+      "$date": "2025-06-01T10:05:48.938768Z"
+    },
+    "is_session_end": false,
+    "is_page_change": false,
+    "page_duration": 234,
+    "page_view_count": 8
+  },
+  {
+    "_id": {
+      "$oid": "47a4207635024258ba7d2f35"
+    },
+    "ip_address": "192.168.28.71",
+    "country": "Germany",
+    "city": "Berlin",
+    "domain": "localhost",
+    "page_path": "/product",
+    "page_title": "Contact",
+    "user_agent": "Mozilla/5.0 (iOS NT 10.0; Win64; x64; rv:85.0) Gecko/20100101 Firefox/83.0",
+    "device_type": "mobile",
+    "device_browser": "Safari",
+    "device_os": "macOS",
+    "referrer": "",
+    "language": "de-DE",
+    "screen_resolution": "1440x900",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.938798Z"
+    },
+    "session_id": "0d884d60-40eb-403e-a0f7-31a2e623d8d7",
+    "session_start": {
+      "$date": "2025-06-01T10:13:48.938798Z"
+    },
+    "is_session_end": false,
+    "is_page_change": true,
+    "page_duration": 149,
+    "page_view_count": 7
+  },
+  {
+    "_id": {
+      "$oid": "89de482deadc436480e9995d"
+    },
+    "ip_address": "192.168.136.135",
+    "country": "Brazil",
+    "city": "S\u00e3o Paulo",
+    "domain": "analytics.app",
+    "page_path": "/product",
+    "page_title": "Dashboard",
+    "user_agent": "Mozilla/5.0 (Linux NT 10.0; Win64; x64; rv:81.0) Gecko/20100101 Chrome/115.0",
+    "device_type": "mobile",
+    "device_browser": "Edge",
+    "device_os": "Linux",
+    "referrer": "https://twitter.com",
+    "language": "es-ES",
+    "screen_resolution": "1920x1080",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.938831Z"
+    },
+    "session_id": "b11c7c57-a669-4cde-86e1-aeac75ffd143",
+    "session_start": {
+      "$date": "2025-06-01T09:43:48.938831Z"
+    },
+    "is_session_end": true,
+    "is_page_change": true,
+    "page_duration": 86,
+    "page_view_count": 6
+  },
+  {
+    "_id": {
+      "$oid": "52c3f6ed8abf4cad828db554"
+    },
+    "ip_address": "192.168.211.196",
+    "country": "South Africa",
+    "city": "Cape Town",
+    "domain": "localhost",
+    "page_path": "/",
+    "page_title": "Contact",
+    "user_agent": "Mozilla/5.0 (Linux NT 10.0; Win64; x64; rv:116.0) Gecko/20100101 Safari/120.0",
+    "device_type": "tablet",
+    "device_browser": "Firefox",
+    "device_os": "Android",
+    "referrer": "",
+    "language": "en-US",
+    "screen_resolution": "1536x864",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.938897Z"
+    },
+    "session_id": "15277ba1-6fe4-465b-b097-580795981d85",
+    "session_start": {
+      "$date": "2025-06-01T09:46:48.938897Z"
+    },
+    "is_session_end": false,
+    "is_page_change": false,
+    "page_duration": 274,
+    "page_view_count": 5
+  },
+  {
+    "_id": {
+      "$oid": "4c3f6d9ae1df4a4e89fe1b8a"
+    },
+    "ip_address": "192.168.223.232",
+    "country": "Germany",
+    "city": "Berlin",
+    "domain": "analytics.app",
+    "page_path": "/",
+    "page_title": "Pricing",
+    "user_agent": "Mozilla/5.0 (Android NT 10.0; Win64; x64; rv:89.0) Gecko/20100101 Edge/112.0",
+    "device_type": "tablet",
+    "device_browser": "Chrome",
+    "device_os": "Linux",
+    "referrer": "https://linkedin.com",
+    "language": "en-US",
+    "screen_resolution": "1920x1080",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.938938Z"
+    },
+    "session_id": "13bcafc3-03a9-41dc-bf8f-39e2ef1fe444",
+    "session_start": {
+      "$date": "2025-06-01T09:59:48.938938Z"
+    },
+    "is_session_end": false,
+    "is_page_change": false,
+    "page_duration": 206,
+    "page_view_count": 6
+  },
+  {
+    "_id": {
+      "$oid": "4ddbc21d818f4255b39e488e"
+    },
+    "ip_address": "192.168.33.223",
+    "country": "India",
+    "city": "Mumbai",
+    "domain": "example.com",
+    "page_path": "/product",
+    "page_title": "Product Page",
+    "user_agent": "Mozilla/5.0 (iOS NT 10.0; Win64; x64; rv:111.0) Gecko/20100101 Firefox/134.0",
+    "device_type": "mobile",
+    "device_browser": "Firefox",
+    "device_os": "Android",
+    "referrer": "https://linkedin.com",
+    "language": "en-GB",
+    "screen_resolution": "1280x720",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.938964Z"
+    },
+    "session_id": "34fa7d47-fce0-4768-8283-1d9432fcc3e9",
+    "session_start": {
+      "$date": "2025-06-01T09:49:48.938964Z"
+    },
+    "is_session_end": true,
+    "is_page_change": false,
+    "page_duration": 256,
+    "page_view_count": 10
+  },
+  {
+    "_id": {
+      "$oid": "b38e6a0481c446d7aab93f08"
+    },
+    "ip_address": "192.168.35.233",
+    "country": "South Africa",
+    "city": "Cape Town",
+    "domain": "localhost",
+    "page_path": "/about",
+    "page_title": "Contact",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:122.0) Gecko/20100101 Firefox/81.0",
+    "device_type": "mobile",
+    "device_browser": "Safari",
+    "device_os": "Linux",
+    "referrer": "https://twitter.com",
+    "language": "en-GB",
+    "screen_resolution": "1440x900",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.938995Z"
+    },
+    "session_id": "29b46bc8-94b3-48a3-9beb-6e2cab1e89ef",
+    "session_start": {
+      "$date": "2025-06-01T09:54:48.938995Z"
+    },
+    "is_session_end": true,
+    "is_page_change": false,
+    "page_duration": 195,
+    "page_view_count": 2
+  },
+  {
+    "_id": {
+      "$oid": "8fa42dbd3965439bb706d8ac"
+    },
+    "ip_address": "192.168.241.65",
+    "country": "Canada",
+    "city": "Toronto",
+    "domain": "analytics.app",
+    "page_path": "/pricing",
+    "page_title": "Home",
+    "user_agent": "Mozilla/5.0 (Android NT 10.0; Win64; x64; rv:125.0) Gecko/20100101 Firefox/93.0",
+    "device_type": "tablet",
+    "device_browser": "Safari",
+    "device_os": "Android",
+    "referrer": "https://linkedin.com",
+    "language": "hi-IN",
+    "screen_resolution": "1920x1080",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.939066Z"
+    },
+    "session_id": "3fd4b748-fc5f-41fc-bade-b0fed49942e3",
+    "session_start": {
+      "$date": "2025-06-01T11:00:48.939066Z"
+    },
+    "is_session_end": false,
+    "is_page_change": false,
+    "page_duration": 239,
+    "page_view_count": 9
+  },
+  {
+    "_id": {
+      "$oid": "cd81627250964546982c86ef"
+    },
+    "ip_address": "192.168.168.115",
+    "country": "Japan",
+    "city": "Tokyo",
+    "domain": "localhost",
+    "page_path": "/about",
+    "page_title": "Pricing",
+    "user_agent": "Mozilla/5.0 (Android NT 10.0; Win64; x64; rv:119.0) Gecko/20100101 Firefox/87.0",
+    "device_type": "tablet",
+    "device_browser": "Edge",
+    "device_os": "Linux",
+    "referrer": "",
+    "language": "de-DE",
+    "screen_resolution": "1280x720",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.939116Z"
+    },
+    "session_id": "13748624-dd02-4733-8038-ba6245e2401b",
+    "session_start": {
+      "$date": "2025-06-01T10:28:48.939116Z"
+    },
+    "is_session_end": false,
+    "is_page_change": false,
+    "page_duration": 29,
+    "page_view_count": 7
+  },
+  {
+    "_id": {
+      "$oid": "1b65237aa23b48439a23c969"
+    },
+    "ip_address": "192.168.44.198",
+    "country": "UK",
+    "city": "London",
+    "domain": "analytics.app",
+    "page_path": "/contact",
+    "page_title": "Product Page",
+    "user_agent": "Mozilla/5.0 (Linux NT 10.0; Win64; x64; rv:138.0) Gecko/20100101 Safari/121.0",
+    "device_type": "tablet",
+    "device_browser": "Firefox",
+    "device_os": "Windows",
+    "referrer": "",
+    "language": "ja-JP",
+    "screen_resolution": "1536x864",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.939143Z"
+    },
+    "session_id": "2c46a8b8-4cd9-4be3-aa99-01d45103c829",
+    "session_start": {
+      "$date": "2025-06-01T10:57:48.939143Z"
+    },
+    "is_session_end": false,
+    "is_page_change": false,
+    "page_duration": 94,
+    "page_view_count": 2
+  },
+  {
+    "_id": {
+      "$oid": "2695b2986663431d922a24f3"
+    },
+    "ip_address": "192.168.87.141",
+    "country": "Canada",
+    "city": "Toronto",
+    "domain": "mysite.io",
+    "page_path": "/contact",
+    "page_title": "Home",
+    "user_agent": "Mozilla/5.0 (Linux NT 10.0; Win64; x64; rv:87.0) Gecko/20100101 Firefox/128.0",
+    "device_type": "desktop",
+    "device_browser": "Chrome",
+    "device_os": "iOS",
+    "referrer": "https://google.com",
+    "language": "hi-IN",
+    "screen_resolution": "1440x900",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.939170Z"
+    },
+    "session_id": "598bfc2c-8d1d-4685-ae06-6fdd210db707",
+    "session_start": {
+      "$date": "2025-06-01T09:45:48.939170Z"
+    },
+    "is_session_end": false,
+    "is_page_change": false,
+    "page_duration": 90,
+    "page_view_count": 3
+  },
+  {
+    "_id": {
+      "$oid": "9bde771c333545a3a7a389fd"
+    },
+    "ip_address": "192.168.163.120",
+    "country": "South Africa",
+    "city": "Cape Town",
+    "domain": "example.com",
+    "page_path": "/",
+    "page_title": "About Us",
+    "user_agent": "Mozilla/5.0 (macOS NT 10.0; Win64; x64; rv:140.0) Gecko/20100101 Safari/136.0",
+    "device_type": "tablet",
+    "device_browser": "Chrome",
+    "device_os": "macOS",
+    "referrer": "https://linkedin.com",
+    "language": "es-ES",
+    "screen_resolution": "1536x864",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.939202Z"
+    },
+    "session_id": "6b85686e-8247-42ef-8362-c569c62d29df",
+    "session_start": {
+      "$date": "2025-06-01T11:09:48.939202Z"
+    },
+    "is_session_end": false,
+    "is_page_change": true,
+    "page_duration": 80,
+    "page_view_count": 10
+  },
+  {
+    "_id": {
+      "$oid": "c16c5d02d3894446b6aaa167"
+    },
+    "ip_address": "192.168.168.86",
+    "country": "Germany",
+    "city": "Berlin",
+    "domain": "localhost",
+    "page_path": "/contact",
+    "page_title": "Home",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:101.0) Gecko/20100101 Edge/100.0",
+    "device_type": "desktop",
+    "device_browser": "Edge",
+    "device_os": "Android",
+    "referrer": "https://google.com",
+    "language": "hi-IN",
+    "screen_resolution": "1440x900",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.939237Z"
+    },
+    "session_id": "e6b8f9f2-758a-4387-9931-e64a515009fd",
+    "session_start": {
+      "$date": "2025-06-01T09:40:48.939237Z"
+    },
+    "is_session_end": true,
+    "is_page_change": true,
+    "page_duration": 265,
+    "page_view_count": 9
+  },
+  {
+    "_id": {
+      "$oid": "7faf72b51ef9482180eb6ed1"
+    },
+    "ip_address": "192.168.207.201",
+    "country": "France",
+    "city": "Paris",
+    "domain": "localhost",
+    "page_path": "/home",
+    "page_title": "Contact",
+    "user_agent": "Mozilla/5.0 (iOS NT 10.0; Win64; x64; rv:112.0) Gecko/20100101 Safari/86.0",
+    "device_type": "mobile",
+    "device_browser": "Edge",
+    "device_os": "Windows",
+    "referrer": "https://google.com",
+    "language": "en-GB",
+    "screen_resolution": "1366x768",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.939269Z"
+    },
+    "session_id": "9d074a62-cad5-4b91-a1d4-a055947524a4",
+    "session_start": {
+      "$date": "2025-06-01T09:50:48.939269Z"
+    },
+    "is_session_end": true,
+    "is_page_change": true,
+    "page_duration": 283,
+    "page_view_count": 10
+  },
+  {
+    "_id": {
+      "$oid": "3ef68fa0c6f64082a42eb474"
+    },
+    "ip_address": "192.168.120.43",
+    "country": "India",
+    "city": "Mumbai",
+    "domain": "localhost",
+    "page_path": "/contact",
+    "page_title": "About Us",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:117.0) Gecko/20100101 Edge/100.0",
+    "device_type": "desktop",
+    "device_browser": "Firefox",
+    "device_os": "Windows",
+    "referrer": "https://twitter.com",
+    "language": "es-ES",
+    "screen_resolution": "1536x864",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.939328Z"
+    },
+    "session_id": "00e7cc8f-e99c-4410-9dc1-fb9ad99c621d",
+    "session_start": {
+      "$date": "2025-06-01T10:18:48.939328Z"
+    },
+    "is_session_end": false,
+    "is_page_change": true,
+    "page_duration": 221,
+    "page_view_count": 5
+  },
+  {
+    "_id": {
+      "$oid": "7dc3ea1c08ba461a974c3445"
+    },
+    "ip_address": "192.168.20.89",
+    "country": "France",
+    "city": "Paris",
+    "domain": "localhost",
+    "page_path": "/",
+    "page_title": "Pricing",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:137.0) Gecko/20100101 Edge/82.0",
+    "device_type": "desktop",
+    "device_browser": "Firefox",
+    "device_os": "Linux",
+    "referrer": "https://twitter.com",
+    "language": "hi-IN",
+    "screen_resolution": "1536x864",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.939400Z"
+    },
+    "session_id": "3a4fe74e-bfd4-4ded-8e85-79ec59bdeba8",
+    "session_start": {
+      "$date": "2025-06-01T11:07:48.939400Z"
+    },
+    "is_session_end": true,
+    "is_page_change": true,
+    "page_duration": 34,
+    "page_view_count": 5
+  },
+  {
+    "_id": {
+      "$oid": "085558c65ba1434d87788f2f"
+    },
+    "ip_address": "192.168.123.94",
+    "country": "Japan",
+    "city": "Tokyo",
+    "domain": "mysite.io",
+    "page_path": "/contact",
+    "page_title": "Product Page",
+    "user_agent": "Mozilla/5.0 (macOS NT 10.0; Win64; x64; rv:125.0) Gecko/20100101 Firefox/137.0",
+    "device_type": "mobile",
+    "device_browser": "Chrome",
+    "device_os": "Linux",
+    "referrer": "",
+    "language": "en-US",
+    "screen_resolution": "1366x768",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.939460Z"
+    },
+    "session_id": "c4f5538b-074a-41d1-a422-63b4b65c745d",
+    "session_start": {
+      "$date": "2025-06-01T09:54:48.939460Z"
+    },
+    "is_session_end": true,
+    "is_page_change": true,
+    "page_duration": 240,
+    "page_view_count": 7
+  },
+  {
+    "_id": {
+      "$oid": "1d21e0015c3849b1981b4884"
+    },
+    "ip_address": "192.168.97.170",
+    "country": "France",
+    "city": "Paris",
+    "domain": "mysite.io",
+    "page_path": "/about",
+    "page_title": "Home",
+    "user_agent": "Mozilla/5.0 (Linux NT 10.0; Win64; x64; rv:140.0) Gecko/20100101 Chrome/101.0",
+    "device_type": "desktop",
+    "device_browser": "Edge",
+    "device_os": "iOS",
+    "referrer": "",
+    "language": "fr-FR",
+    "screen_resolution": "1280x720",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.939538Z"
+    },
+    "session_id": "53347e30-1efa-4715-86de-7f814839656d",
+    "session_start": {
+      "$date": "2025-06-01T11:21:48.939538Z"
+    },
+    "is_session_end": false,
+    "is_page_change": true,
+    "page_duration": 133,
+    "page_view_count": 6
+  },
+  {
+    "_id": {
+      "$oid": "4908e88940eb43fa8d3564e8"
+    },
+    "ip_address": "192.168.84.82",
+    "country": "Brazil",
+    "city": "S\u00e3o Paulo",
+    "domain": "example.com",
+    "page_path": "/about",
+    "page_title": "Dashboard",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:112.0) Gecko/20100101 Edge/132.0",
+    "device_type": "tablet",
+    "device_browser": "Firefox",
+    "device_os": "Linux",
+    "referrer": "https://twitter.com",
+    "language": "en-US",
+    "screen_resolution": "1280x720",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.939619Z"
+    },
+    "session_id": "627f4101-ef8b-4b7e-834a-4bf111d23675",
+    "session_start": {
+      "$date": "2025-06-01T10:18:48.939619Z"
+    },
+    "is_session_end": false,
+    "is_page_change": false,
+    "page_duration": 255,
+    "page_view_count": 5
+  },
+  {
+    "_id": {
+      "$oid": "7b3c3dc4bfb64326879e8d60"
+    },
+    "ip_address": "192.168.148.1",
+    "country": "Germany",
+    "city": "Berlin",
+    "domain": "localhost",
+    "page_path": "/home",
+    "page_title": "Pricing",
+    "user_agent": "Mozilla/5.0 (Linux NT 10.0; Win64; x64; rv:117.0) Gecko/20100101 Safari/100.0",
+    "device_type": "mobile",
+    "device_browser": "Chrome",
+    "device_os": "iOS",
+    "referrer": "https://linkedin.com",
+    "language": "hi-IN",
+    "screen_resolution": "1536x864",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.939694Z"
+    },
+    "session_id": "4c205ff0-2473-452f-af0d-029a37718089",
+    "session_start": {
+      "$date": "2025-06-01T10:31:48.939694Z"
+    },
+    "is_session_end": false,
+    "is_page_change": false,
+    "page_duration": 259,
+    "page_view_count": 9
+  },
+  {
+    "_id": {
+      "$oid": "c9a76896a901454fa65558f0"
+    },
+    "ip_address": "192.168.160.125",
+    "country": "Australia",
+    "city": "Sydney",
+    "domain": "analytics.app",
+    "page_path": "/product",
+    "page_title": "Pricing",
+    "user_agent": "Mozilla/5.0 (Android NT 10.0; Win64; x64; rv:83.0) Gecko/20100101 Chrome/124.0",
+    "device_type": "mobile",
+    "device_browser": "Edge",
+    "device_os": "macOS",
+    "referrer": "https://linkedin.com",
+    "language": "fr-FR",
+    "screen_resolution": "1440x900",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.939769Z"
+    },
+    "session_id": "eee936c3-be1d-4ebb-a72c-c0508c35dc43",
+    "session_start": {
+      "$date": "2025-06-01T10:50:48.939769Z"
+    },
+    "is_session_end": false,
+    "is_page_change": true,
+    "page_duration": 218,
+    "page_view_count": 3
+  },
+  {
+    "_id": {
+      "$oid": "62c8eaed1f854bf0a55a549a"
+    },
+    "ip_address": "192.168.131.209",
+    "country": "UK",
+    "city": "London",
+    "domain": "analytics.app",
+    "page_path": "/home",
+    "page_title": "About Us",
+    "user_agent": "Mozilla/5.0 (Linux NT 10.0; Win64; x64; rv:103.0) Gecko/20100101 Firefox/108.0",
+    "device_type": "desktop",
+    "device_browser": "Safari",
+    "device_os": "Linux",
+    "referrer": "https://linkedin.com",
+    "language": "en-US",
+    "screen_resolution": "1366x768",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.939858Z"
+    },
+    "session_id": "f7f3d3bf-7867-43bf-879f-85acfbe4ed54",
+    "session_start": {
+      "$date": "2025-06-01T10:50:48.939858Z"
+    },
+    "is_session_end": true,
+    "is_page_change": true,
+    "page_duration": 4,
+    "page_view_count": 3
+  },
+  {
+    "_id": {
+      "$oid": "d347b339cf3f40e1b71de1bf"
+    },
+    "ip_address": "192.168.122.173",
+    "country": "Australia",
+    "city": "Sydney",
+    "domain": "example.com",
+    "page_path": "/home",
+    "page_title": "About Us",
+    "user_agent": "Mozilla/5.0 (Linux NT 10.0; Win64; x64; rv:111.0) Gecko/20100101 Firefox/121.0",
+    "device_type": "desktop",
+    "device_browser": "Safari",
+    "device_os": "Windows",
+    "referrer": "https://twitter.com",
+    "language": "en-GB",
+    "screen_resolution": "1920x1080",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.939926Z"
+    },
+    "session_id": "b6d813e8-913e-4af6-8244-a5d966c5fa28",
+    "session_start": {
+      "$date": "2025-06-01T11:21:48.939926Z"
+    },
+    "is_session_end": false,
+    "is_page_change": false,
+    "page_duration": 35,
+    "page_view_count": 2
+  },
+  {
+    "_id": {
+      "$oid": "cfb2306875e84ee78ebb5b3f"
+    },
+    "ip_address": "192.168.156.145",
+    "country": "South Africa",
+    "city": "Cape Town",
+    "domain": "localhost",
+    "page_path": "/pricing",
+    "page_title": "About Us",
+    "user_agent": "Mozilla/5.0 (Android NT 10.0; Win64; x64; rv:127.0) Gecko/20100101 Safari/138.0",
+    "device_type": "mobile",
+    "device_browser": "Safari",
+    "device_os": "Android",
+    "referrer": "",
+    "language": "hi-IN",
+    "screen_resolution": "1440x900",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.939994Z"
+    },
+    "session_id": "ebc22af1-2c35-4197-b47b-d87bea5bee53",
+    "session_start": {
+      "$date": "2025-06-01T09:40:48.939994Z"
+    },
+    "is_session_end": false,
+    "is_page_change": false,
+    "page_duration": 177,
+    "page_view_count": 6
+  },
+  {
+    "_id": {
+      "$oid": "a6828495c7694db5ad797756"
+    },
+    "ip_address": "192.168.37.210",
+    "country": "India",
+    "city": "Mumbai",
+    "domain": "mysite.io",
+    "page_path": "/home",
+    "page_title": "Home",
+    "user_agent": "Mozilla/5.0 (macOS NT 10.0; Win64; x64; rv:136.0) Gecko/20100101 Edge/95.0",
+    "device_type": "mobile",
+    "device_browser": "Safari",
+    "device_os": "Android",
+    "referrer": "https://twitter.com",
+    "language": "es-ES",
+    "screen_resolution": "1920x1080",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.940062Z"
+    },
+    "session_id": "fe68e2b0-3c81-429a-8af5-f64f6271b95d",
+    "session_start": {
+      "$date": "2025-06-01T10:34:48.940062Z"
+    },
+    "is_session_end": true,
+    "is_page_change": true,
+    "page_duration": 173,
+    "page_view_count": 1
+  },
+  {
+    "_id": {
+      "$oid": "635cb6496c0142e68590814e"
+    },
+    "ip_address": "192.168.122.5",
+    "country": "United States",
+    "city": "New York",
+    "domain": "analytics.app",
+    "page_path": "/pricing",
+    "page_title": "About Us",
+    "user_agent": "Mozilla/5.0 (Android NT 10.0; Win64; x64; rv:135.0) Gecko/20100101 Safari/135.0",
+    "device_type": "tablet",
+    "device_browser": "Edge",
+    "device_os": "Linux",
+    "referrer": "https://google.com",
+    "language": "en-US",
+    "screen_resolution": "1440x900",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.940129Z"
+    },
+    "session_id": "65c6e712-d072-4b8b-b50f-658c8a06cf8e",
+    "session_start": {
+      "$date": "2025-06-01T10:14:48.940129Z"
+    },
+    "is_session_end": false,
+    "is_page_change": true,
+    "page_duration": 253,
+    "page_view_count": 8
+  },
+  {
+    "_id": {
+      "$oid": "6c5ed3d2454c41aab5e48656"
+    },
+    "ip_address": "192.168.136.82",
+    "country": "Canada",
+    "city": "Toronto",
+    "domain": "localhost",
+    "page_path": "/product",
+    "page_title": "About Us",
+    "user_agent": "Mozilla/5.0 (Android NT 10.0; Win64; x64; rv:95.0) Gecko/20100101 Chrome/106.0",
+    "device_type": "mobile",
+    "device_browser": "Safari",
+    "device_os": "iOS",
+    "referrer": "https://google.com",
+    "language": "en-GB",
+    "screen_resolution": "1920x1080",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.940246Z"
+    },
+    "session_id": "f9c65cfd-c96c-4c66-a6f9-25b20f847baa",
+    "session_start": {
+      "$date": "2025-06-01T10:14:48.940246Z"
+    },
+    "is_session_end": true,
+    "is_page_change": true,
+    "page_duration": 57,
+    "page_view_count": 8
+  },
+  {
+    "_id": {
+      "$oid": "9a845ddd81cb4d9fabd74915"
+    },
+    "ip_address": "192.168.138.144",
+    "country": "Brazil",
+    "city": "S\u00e3o Paulo",
+    "domain": "analytics.app",
+    "page_path": "/about",
+    "page_title": "Dashboard",
+    "user_agent": "Mozilla/5.0 (iOS NT 10.0; Win64; x64; rv:87.0) Gecko/20100101 Chrome/98.0",
+    "device_type": "desktop",
+    "device_browser": "Firefox",
+    "device_os": "macOS",
+    "referrer": "https://twitter.com",
+    "language": "es-ES",
+    "screen_resolution": "1280x720",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.940314Z"
+    },
+    "session_id": "6b0d2db4-aced-44a9-862e-532bee2ade54",
+    "session_start": {
+      "$date": "2025-06-01T09:33:48.940314Z"
+    },
+    "is_session_end": false,
+    "is_page_change": false,
+    "page_duration": 295,
+    "page_view_count": 8
+  },
+  {
+    "_id": {
+      "$oid": "ccd5554695d849529a5920de"
+    },
+    "ip_address": "192.168.129.30",
+    "country": "Australia",
+    "city": "Sydney",
+    "domain": "localhost",
+    "page_path": "/product",
+    "page_title": "Pricing",
+    "user_agent": "Mozilla/5.0 (Android NT 10.0; Win64; x64; rv:117.0) Gecko/20100101 Firefox/121.0",
+    "device_type": "tablet",
+    "device_browser": "Edge",
+    "device_os": "iOS",
+    "referrer": "https://google.com",
+    "language": "en-GB",
+    "screen_resolution": "1536x864",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.940392Z"
+    },
+    "session_id": "ce4a4a4d-8593-4992-911c-bfae303b9156",
+    "session_start": {
+      "$date": "2025-06-01T11:27:48.940392Z"
+    },
+    "is_session_end": true,
+    "is_page_change": false,
+    "page_duration": 99,
+    "page_view_count": 9
+  },
+  {
+    "_id": {
+      "$oid": "009fa87e40f54a72b8e93369"
+    },
+    "ip_address": "192.168.254.120",
+    "country": "Germany",
+    "city": "Berlin",
+    "domain": "localhost",
+    "page_path": "/pricing",
+    "page_title": "Home",
+    "user_agent": "Mozilla/5.0 (iOS NT 10.0; Win64; x64; rv:131.0) Gecko/20100101 Safari/103.0",
+    "device_type": "desktop",
+    "device_browser": "Firefox",
+    "device_os": "Linux",
+    "referrer": "https://google.com",
+    "language": "ja-JP",
+    "screen_resolution": "1536x864",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.940457Z"
+    },
+    "session_id": "136f5322-8f54-4da5-95c7-c155eaa4a7e3",
+    "session_start": {
+      "$date": "2025-06-01T11:26:48.940457Z"
+    },
+    "is_session_end": false,
+    "is_page_change": true,
+    "page_duration": 197,
+    "page_view_count": 5
+  },
+  {
+    "_id": {
+      "$oid": "06b5cfc6d736456b8edcb4b8"
+    },
+    "ip_address": "192.168.23.188",
+    "country": "India",
+    "city": "Mumbai",
+    "domain": "example.com",
+    "page_path": "/about",
+    "page_title": "Contact",
+    "user_agent": "Mozilla/5.0 (iOS NT 10.0; Win64; x64; rv:134.0) Gecko/20100101 Chrome/131.0",
+    "device_type": "tablet",
+    "device_browser": "Chrome",
+    "device_os": "macOS",
+    "referrer": "",
+    "language": "en-GB",
+    "screen_resolution": "1366x768",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.940524Z"
+    },
+    "session_id": "df1fe504-f7d1-4e8c-b617-1a597d128262",
+    "session_start": {
+      "$date": "2025-06-01T10:40:48.940524Z"
+    },
+    "is_session_end": false,
+    "is_page_change": false,
+    "page_duration": 168,
+    "page_view_count": 1
+  },
+  {
+    "_id": {
+      "$oid": "d901f80fed5f4981a778298c"
+    },
+    "ip_address": "192.168.201.83",
+    "country": "UK",
+    "city": "London",
+    "domain": "localhost",
+    "page_path": "/about",
+    "page_title": "Product Page",
+    "user_agent": "Mozilla/5.0 (macOS NT 10.0; Win64; x64; rv:99.0) Gecko/20100101 Firefox/82.0",
+    "device_type": "mobile",
+    "device_browser": "Edge",
+    "device_os": "Windows",
+    "referrer": "https://google.com",
+    "language": "de-DE",
+    "screen_resolution": "1366x768",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.940590Z"
+    },
+    "session_id": "4047ea19-8768-4a87-90d0-639637265a4a",
+    "session_start": {
+      "$date": "2025-06-01T10:10:48.940590Z"
+    },
+    "is_session_end": true,
+    "is_page_change": true,
+    "page_duration": 185,
+    "page_view_count": 1
+  },
+  {
+    "_id": {
+      "$oid": "d7f93f9caee14d07845b00f9"
+    },
+    "ip_address": "192.168.218.88",
+    "country": "Germany",
+    "city": "Berlin",
+    "domain": "localhost",
+    "page_path": "/",
+    "page_title": "About Us",
+    "user_agent": "Mozilla/5.0 (macOS NT 10.0; Win64; x64; rv:140.0) Gecko/20100101 Firefox/86.0",
+    "device_type": "mobile",
+    "device_browser": "Chrome",
+    "device_os": "Linux",
+    "referrer": "https://twitter.com",
+    "language": "en-US",
+    "screen_resolution": "1280x720",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.940658Z"
+    },
+    "session_id": "99cce3e5-4398-47b4-810e-b504824e294c",
+    "session_start": {
+      "$date": "2025-06-01T11:20:48.940658Z"
+    },
+    "is_session_end": false,
+    "is_page_change": false,
+    "page_duration": 205,
+    "page_view_count": 4
+  },
+  {
+    "_id": {
+      "$oid": "0b164bc96f234d50bd9f7597"
+    },
+    "ip_address": "192.168.170.50",
+    "country": "Canada",
+    "city": "Toronto",
+    "domain": "localhost",
+    "page_path": "/about",
+    "page_title": "About Us",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:108.0) Gecko/20100101 Firefox/132.0",
+    "device_type": "desktop",
+    "device_browser": "Firefox",
+    "device_os": "Android",
+    "referrer": "",
+    "language": "en-US",
+    "screen_resolution": "1920x1080",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.940726Z"
+    },
+    "session_id": "0c3a4f58-9ca8-4a1d-a83a-125862e027b4",
+    "session_start": {
+      "$date": "2025-06-01T10:28:48.940726Z"
+    },
+    "is_session_end": true,
+    "is_page_change": true,
+    "page_duration": 144,
+    "page_view_count": 6
+  },
+  {
+    "_id": {
+      "$oid": "221b92f9183241058182086d"
+    },
+    "ip_address": "192.168.69.113",
+    "country": "South Africa",
+    "city": "Cape Town",
+    "domain": "mysite.io",
+    "page_path": "/contact",
+    "page_title": "Dashboard",
+    "user_agent": "Mozilla/5.0 (macOS NT 10.0; Win64; x64; rv:102.0) Gecko/20100101 Chrome/91.0",
+    "device_type": "tablet",
+    "device_browser": "Firefox",
+    "device_os": "Linux",
+    "referrer": "https://twitter.com",
+    "language": "es-ES",
+    "screen_resolution": "1536x864",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.940797Z"
+    },
+    "session_id": "5ebaf446-09cc-424e-854e-8299329bc461",
+    "session_start": {
+      "$date": "2025-06-01T09:41:48.940797Z"
+    },
+    "is_session_end": true,
+    "is_page_change": false,
+    "page_duration": 44,
+    "page_view_count": 8
+  },
+  {
+    "_id": {
+      "$oid": "967d32ee24414c4793e3753b"
+    },
+    "ip_address": "192.168.69.23",
+    "country": "Canada",
+    "city": "Toronto",
+    "domain": "analytics.app",
+    "page_path": "/contact",
+    "page_title": "Pricing",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:140.0) Gecko/20100101 Safari/116.0",
+    "device_type": "desktop",
+    "device_browser": "Chrome",
+    "device_os": "iOS",
+    "referrer": "https://twitter.com",
+    "language": "hi-IN",
+    "screen_resolution": "1366x768",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.940866Z"
+    },
+    "session_id": "e2fc082f-a19c-41a6-bfc3-666b69b400d1",
+    "session_start": {
+      "$date": "2025-06-01T11:08:48.940866Z"
+    },
+    "is_session_end": false,
+    "is_page_change": false,
+    "page_duration": 115,
+    "page_view_count": 7
+  },
+  {
+    "_id": {
+      "$oid": "436c8f8b43e8438aa270f8a5"
+    },
+    "ip_address": "192.168.170.129",
+    "country": "India",
+    "city": "Mumbai",
+    "domain": "analytics.app",
+    "page_path": "/pricing",
+    "page_title": "Product Page",
+    "user_agent": "Mozilla/5.0 (iOS NT 10.0; Win64; x64; rv:138.0) Gecko/20100101 Firefox/84.0",
+    "device_type": "tablet",
+    "device_browser": "Edge",
+    "device_os": "Android",
+    "referrer": "https://twitter.com",
+    "language": "hi-IN",
+    "screen_resolution": "1366x768",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.940934Z"
+    },
+    "session_id": "ce8858b5-4e7b-4e84-a6f9-f4d05ff10661",
+    "session_start": {
+      "$date": "2025-06-01T10:09:48.940934Z"
+    },
+    "is_session_end": false,
+    "is_page_change": true,
+    "page_duration": 30,
+    "page_view_count": 1
+  },
+  {
+    "_id": {
+      "$oid": "213de786f0574c6fbfc5b284"
+    },
+    "ip_address": "192.168.25.144",
+    "country": "United States",
+    "city": "New York",
+    "domain": "mysite.io",
+    "page_path": "/",
+    "page_title": "Dashboard",
+    "user_agent": "Mozilla/5.0 (Linux NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Safari/126.0",
+    "device_type": "desktop",
+    "device_browser": "Edge",
+    "device_os": "macOS",
+    "referrer": "https://google.com",
+    "language": "fr-FR",
+    "screen_resolution": "1920x1080",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.941003Z"
+    },
+    "session_id": "b0ef57c1-e6aa-4593-bf29-86301d1f229a",
+    "session_start": {
+      "$date": "2025-06-01T09:58:48.941003Z"
+    },
+    "is_session_end": false,
+    "is_page_change": false,
+    "page_duration": 7,
+    "page_view_count": 10
+  },
+  {
+    "_id": {
+      "$oid": "79070f47c4c84952a4697964"
+    },
+    "ip_address": "192.168.21.205",
+    "country": "India",
+    "city": "Mumbai",
+    "domain": "example.com",
+    "page_path": "/pricing",
+    "page_title": "Dashboard",
+    "user_agent": "Mozilla/5.0 (iOS NT 10.0; Win64; x64; rv:137.0) Gecko/20100101 Safari/114.0",
+    "device_type": "mobile",
+    "device_browser": "Safari",
+    "device_os": "iOS",
+    "referrer": "https://twitter.com",
+    "language": "en-US",
+    "screen_resolution": "1536x864",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.941068Z"
+    },
+    "session_id": "0d44b48f-c6f6-4d4f-b6a0-ce4bb03553d0",
+    "session_start": {
+      "$date": "2025-06-01T09:39:48.941068Z"
+    },
+    "is_session_end": false,
+    "is_page_change": true,
+    "page_duration": 122,
+    "page_view_count": 3
+  },
+  {
+    "_id": {
+      "$oid": "2085ab14f075458aa772e61f"
+    },
+    "ip_address": "192.168.160.110",
+    "country": "Canada",
+    "city": "Toronto",
+    "domain": "mysite.io",
+    "page_path": "/",
+    "page_title": "Pricing",
+    "user_agent": "Mozilla/5.0 (macOS NT 10.0; Win64; x64; rv:107.0) Gecko/20100101 Safari/94.0",
+    "device_type": "tablet",
+    "device_browser": "Firefox",
+    "device_os": "Android",
+    "referrer": "https://twitter.com",
+    "language": "de-DE",
+    "screen_resolution": "1366x768",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.941136Z"
+    },
+    "session_id": "5a5271ae-626b-4e5d-9688-954229e51b9d",
+    "session_start": {
+      "$date": "2025-06-01T10:50:48.941136Z"
+    },
+    "is_session_end": true,
+    "is_page_change": true,
+    "page_duration": 22,
+    "page_view_count": 4
+  },
+  {
+    "_id": {
+      "$oid": "1a2b4828e93447bf9e6a4088"
+    },
+    "ip_address": "192.168.152.32",
+    "country": "France",
+    "city": "Paris",
+    "domain": "mysite.io",
+    "page_path": "/pricing",
+    "page_title": "Product Page",
+    "user_agent": "Mozilla/5.0 (macOS NT 10.0; Win64; x64; rv:113.0) Gecko/20100101 Safari/125.0",
+    "device_type": "mobile",
+    "device_browser": "Chrome",
+    "device_os": "Windows",
+    "referrer": "https://google.com",
+    "language": "hi-IN",
+    "screen_resolution": "1366x768",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.941204Z"
+    },
+    "session_id": "65d2ce23-2f8f-4efd-b365-c2b44bfafb2c",
+    "session_start": {
+      "$date": "2025-06-01T11:06:48.941204Z"
+    },
+    "is_session_end": false,
+    "is_page_change": false,
+    "page_duration": 92,
+    "page_view_count": 9
+  },
+  {
+    "_id": {
+      "$oid": "4f822a7a167c464790a984e9"
+    },
+    "ip_address": "192.168.21.12",
+    "country": "France",
+    "city": "Paris",
+    "domain": "analytics.app",
+    "page_path": "/contact",
+    "page_title": "About Us",
+    "user_agent": "Mozilla/5.0 (Android NT 10.0; Win64; x64; rv:102.0) Gecko/20100101 Firefox/116.0",
+    "device_type": "desktop",
+    "device_browser": "Edge",
+    "device_os": "Windows",
+    "referrer": "",
+    "language": "ja-JP",
+    "screen_resolution": "1366x768",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.941272Z"
+    },
+    "session_id": "89e4fa9d-9f9b-4de9-b05c-acb45c53fa67",
+    "session_start": {
+      "$date": "2025-06-01T11:07:48.941272Z"
+    },
+    "is_session_end": false,
+    "is_page_change": true,
+    "page_duration": 32,
+    "page_view_count": 9
+  },
+  {
+    "_id": {
+      "$oid": "cd4892cd3ad94a04858351a8"
+    },
+    "ip_address": "192.168.156.210",
+    "country": "Germany",
+    "city": "Berlin",
+    "domain": "localhost",
+    "page_path": "/pricing",
+    "page_title": "Contact",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:81.0) Gecko/20100101 Chrome/138.0",
+    "device_type": "mobile",
+    "device_browser": "Chrome",
+    "device_os": "iOS",
+    "referrer": "https://twitter.com",
+    "language": "fr-FR",
+    "screen_resolution": "1920x1080",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.941334Z"
+    },
+    "session_id": "bffba4b1-e5cc-4f8e-8ac6-7c571774c697",
+    "session_start": {
+      "$date": "2025-06-01T10:39:48.941334Z"
+    },
+    "is_session_end": false,
+    "is_page_change": true,
+    "page_duration": 63,
+    "page_view_count": 10
+  },
+  {
+    "_id": {
+      "$oid": "257076375d8343db88dcedba"
+    },
+    "ip_address": "192.168.113.151",
+    "country": "UK",
+    "city": "London",
+    "domain": "mysite.io",
+    "page_path": "/home",
+    "page_title": "Home",
+    "user_agent": "Mozilla/5.0 (iOS NT 10.0; Win64; x64; rv:135.0) Gecko/20100101 Firefox/87.0",
+    "device_type": "desktop",
+    "device_browser": "Chrome",
+    "device_os": "Android",
+    "referrer": "",
+    "language": "en-GB",
+    "screen_resolution": "1920x1080",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.941401Z"
+    },
+    "session_id": "a8a712bd-959f-48fe-a81a-b1ebe6f949c5",
+    "session_start": {
+      "$date": "2025-06-01T09:32:48.941401Z"
+    },
+    "is_session_end": false,
+    "is_page_change": false,
+    "page_duration": 131,
+    "page_view_count": 9
+  },
+  {
+    "_id": {
+      "$oid": "9ad75941a5a24ea7ba9446a6"
+    },
+    "ip_address": "192.168.4.191",
+    "country": "Australia",
+    "city": "Sydney",
+    "domain": "mysite.io",
+    "page_path": "/contact",
+    "page_title": "Pricing",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:119.0) Gecko/20100101 Firefox/128.0",
+    "device_type": "tablet",
+    "device_browser": "Safari",
+    "device_os": "macOS",
+    "referrer": "https://twitter.com",
+    "language": "en-US",
+    "screen_resolution": "1440x900",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.941474Z"
+    },
+    "session_id": "61b92662-b547-4704-a46e-338627b021bc",
+    "session_start": {
+      "$date": "2025-06-01T11:29:48.941474Z"
+    },
+    "is_session_end": true,
+    "is_page_change": false,
+    "page_duration": 34,
+    "page_view_count": 1
+  },
+  {
+    "_id": {
+      "$oid": "82cb6ee7b6374929817841d8"
+    },
+    "ip_address": "192.168.95.189",
+    "country": "South Africa",
+    "city": "Cape Town",
+    "domain": "mysite.io",
+    "page_path": "/contact",
+    "page_title": "Dashboard",
+    "user_agent": "Mozilla/5.0 (macOS NT 10.0; Win64; x64; rv:103.0) Gecko/20100101 Chrome/90.0",
+    "device_type": "tablet",
+    "device_browser": "Safari",
+    "device_os": "Windows",
+    "referrer": "https://twitter.com",
+    "language": "es-ES",
+    "screen_resolution": "1440x900",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.941541Z"
+    },
+    "session_id": "69c288c3-5345-449f-b848-566272b82a65",
+    "session_start": {
+      "$date": "2025-06-01T10:57:48.941541Z"
+    },
+    "is_session_end": true,
+    "is_page_change": false,
+    "page_duration": 147,
+    "page_view_count": 7
+  },
+  {
+    "_id": {
+      "$oid": "af49b34a72ad45b983e091e7"
+    },
+    "ip_address": "192.168.178.182",
+    "country": "Japan",
+    "city": "Tokyo",
+    "domain": "analytics.app",
+    "page_path": "/contact",
+    "page_title": "Home",
+    "user_agent": "Mozilla/5.0 (macOS NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Edge/126.0",
+    "device_type": "desktop",
+    "device_browser": "Firefox",
+    "device_os": "Android",
+    "referrer": "https://linkedin.com",
+    "language": "hi-IN",
+    "screen_resolution": "1366x768",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.941609Z"
+    },
+    "session_id": "2cc9986d-9b7d-4a01-866c-6b593c1c7b4c",
+    "session_start": {
+      "$date": "2025-06-01T10:09:48.941609Z"
+    },
+    "is_session_end": false,
+    "is_page_change": true,
+    "page_duration": 211,
+    "page_view_count": 6
+  },
+  {
+    "_id": {
+      "$oid": "bc764edf79434d7c88bc283c"
+    },
+    "ip_address": "192.168.118.202",
+    "country": "Japan",
+    "city": "Tokyo",
+    "domain": "localhost",
+    "page_path": "/pricing",
+    "page_title": "Home",
+    "user_agent": "Mozilla/5.0 (Linux NT 10.0; Win64; x64; rv:113.0) Gecko/20100101 Chrome/119.0",
+    "device_type": "mobile",
+    "device_browser": "Chrome",
+    "device_os": "Android",
+    "referrer": "https://google.com",
+    "language": "hi-IN",
+    "screen_resolution": "1280x720",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.941678Z"
+    },
+    "session_id": "b3126956-f443-41c4-8a3d-9a3b20c93f57",
+    "session_start": {
+      "$date": "2025-06-01T10:02:48.941678Z"
+    },
+    "is_session_end": false,
+    "is_page_change": true,
+    "page_duration": 189,
+    "page_view_count": 7
+  },
+  {
+    "_id": {
+      "$oid": "c31482ff65d4459da294501f"
+    },
+    "ip_address": "192.168.204.144",
+    "country": "UK",
+    "city": "London",
+    "domain": "mysite.io",
+    "page_path": "/home",
+    "page_title": "Product Page",
+    "user_agent": "Mozilla/5.0 (Android NT 10.0; Win64; x64; rv:96.0) Gecko/20100101 Chrome/131.0",
+    "device_type": "desktop",
+    "device_browser": "Edge",
+    "device_os": "iOS",
+    "referrer": "https://twitter.com",
+    "language": "de-DE",
+    "screen_resolution": "1440x900",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.941739Z"
+    },
+    "session_id": "0fa461dd-ca8c-46f8-b2a6-3d7577163a11",
+    "session_start": {
+      "$date": "2025-06-01T09:42:48.941739Z"
+    },
+    "is_session_end": false,
+    "is_page_change": false,
+    "page_duration": 266,
+    "page_view_count": 5
+  },
+  {
+    "_id": {
+      "$oid": "f9b9e59db9e7429b840dc688"
+    },
+    "ip_address": "192.168.34.174",
+    "country": "Germany",
+    "city": "Berlin",
+    "domain": "analytics.app",
+    "page_path": "/",
+    "page_title": "Contact",
+    "user_agent": "Mozilla/5.0 (Android NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Chrome/126.0",
+    "device_type": "tablet",
+    "device_browser": "Safari",
+    "device_os": "Linux",
+    "referrer": "https://twitter.com",
+    "language": "de-DE",
+    "screen_resolution": "1920x1080",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.941807Z"
+    },
+    "session_id": "88356408-8a11-4f7d-8d1d-a64e3da6de2e",
+    "session_start": {
+      "$date": "2025-06-01T09:43:48.941807Z"
+    },
+    "is_session_end": false,
+    "is_page_change": true,
+    "page_duration": 171,
+    "page_view_count": 3
+  },
+  {
+    "_id": {
+      "$oid": "95729deb13254d20bc550a33"
+    },
+    "ip_address": "192.168.37.34",
+    "country": "United States",
+    "city": "New York",
+    "domain": "mysite.io",
+    "page_path": "/contact",
+    "page_title": "Dashboard",
+    "user_agent": "Mozilla/5.0 (iOS NT 10.0; Win64; x64; rv:100.0) Gecko/20100101 Edge/113.0",
+    "device_type": "mobile",
+    "device_browser": "Safari",
+    "device_os": "macOS",
+    "referrer": "https://google.com",
+    "language": "en-GB",
+    "screen_resolution": "1280x720",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.941878Z"
+    },
+    "session_id": "cfeca520-0977-45a6-9c4d-5598a7d0d32d",
+    "session_start": {
+      "$date": "2025-06-01T10:15:48.941878Z"
+    },
+    "is_session_end": false,
+    "is_page_change": true,
+    "page_duration": 195,
+    "page_view_count": 8
+  },
+  {
+    "_id": {
+      "$oid": "f3f8b14134984ac1b10b0dd8"
+    },
+    "ip_address": "192.168.185.214",
+    "country": "United States",
+    "city": "New York",
+    "domain": "mysite.io",
+    "page_path": "/product",
+    "page_title": "About Us",
+    "user_agent": "Mozilla/5.0 (Android NT 10.0; Win64; x64; rv:100.0) Gecko/20100101 Edge/136.0",
+    "device_type": "tablet",
+    "device_browser": "Edge",
+    "device_os": "Windows",
+    "referrer": "https://google.com",
+    "language": "hi-IN",
+    "screen_resolution": "1920x1080",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.941944Z"
+    },
+    "session_id": "73365c7c-e697-4043-b423-a5925e54439f",
+    "session_start": {
+      "$date": "2025-06-01T11:16:48.941944Z"
+    },
+    "is_session_end": false,
+    "is_page_change": false,
+    "page_duration": 298,
+    "page_view_count": 8
+  },
+  {
+    "_id": {
+      "$oid": "7fb23ba6c97347c39ab514b5"
+    },
+    "ip_address": "192.168.122.54",
+    "country": "UK",
+    "city": "London",
+    "domain": "localhost",
+    "page_path": "/pricing",
+    "page_title": "About Us",
+    "user_agent": "Mozilla/5.0 (iOS NT 10.0; Win64; x64; rv:134.0) Gecko/20100101 Safari/137.0",
+    "device_type": "mobile",
+    "device_browser": "Safari",
+    "device_os": "iOS",
+    "referrer": "https://linkedin.com",
+    "language": "en-US",
+    "screen_resolution": "1280x720",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.942012Z"
+    },
+    "session_id": "f9e8dd8b-6e8c-4b51-8be0-ca495f53c79a",
+    "session_start": {
+      "$date": "2025-06-01T10:55:48.942012Z"
+    },
+    "is_session_end": false,
+    "is_page_change": true,
+    "page_duration": 273,
+    "page_view_count": 1
+  },
+  {
+    "_id": {
+      "$oid": "f53426e63aa849f3bd89d870"
+    },
+    "ip_address": "192.168.204.133",
+    "country": "Japan",
+    "city": "Tokyo",
+    "domain": "mysite.io",
+    "page_path": "/home",
+    "page_title": "Contact",
+    "user_agent": "Mozilla/5.0 (iOS NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Firefox/125.0",
+    "device_type": "desktop",
+    "device_browser": "Edge",
+    "device_os": "macOS",
+    "referrer": "https://linkedin.com",
+    "language": "en-GB",
+    "screen_resolution": "1366x768",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.942455Z"
+    },
+    "session_id": "7fca3004-27cb-45e2-bd88-c6e88bc2f11c",
+    "session_start": {
+      "$date": "2025-06-01T11:02:48.942455Z"
+    },
+    "is_session_end": false,
+    "is_page_change": true,
+    "page_duration": 82,
+    "page_view_count": 9
+  },
+  {
+    "_id": {
+      "$oid": "4bed6d56eba54feabdebde11"
+    },
+    "ip_address": "192.168.130.120",
+    "country": "Canada",
+    "city": "Toronto",
+    "domain": "localhost",
+    "page_path": "/",
+    "page_title": "Pricing",
+    "user_agent": "Mozilla/5.0 (Android NT 10.0; Win64; x64; rv:93.0) Gecko/20100101 Edge/91.0",
+    "device_type": "mobile",
+    "device_browser": "Edge",
+    "device_os": "iOS",
+    "referrer": "https://google.com",
+    "language": "de-DE",
+    "screen_resolution": "1280x720",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.942532Z"
+    },
+    "session_id": "ffb9e0a0-6653-4eb8-9f56-22a4fb599e31",
+    "session_start": {
+      "$date": "2025-06-01T10:28:48.942532Z"
+    },
+    "is_session_end": false,
+    "is_page_change": false,
+    "page_duration": 152,
+    "page_view_count": 7
+  },
+  {
+    "_id": {
+      "$oid": "b45b90fc78a248cd9a84ea6b"
+    },
+    "ip_address": "192.168.130.213",
+    "country": "UK",
+    "city": "London",
+    "domain": "analytics.app",
+    "page_path": "/",
+    "page_title": "Pricing",
+    "user_agent": "Mozilla/5.0 (iOS NT 10.0; Win64; x64; rv:96.0) Gecko/20100101 Edge/133.0",
+    "device_type": "mobile",
+    "device_browser": "Safari",
+    "device_os": "Linux",
+    "referrer": "",
+    "language": "en-US",
+    "screen_resolution": "1536x864",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.942592Z"
+    },
+    "session_id": "6e6c6b87-7a26-4f17-be4b-abea3661add0",
+    "session_start": {
+      "$date": "2025-06-01T11:22:48.942592Z"
+    },
+    "is_session_end": false,
+    "is_page_change": false,
+    "page_duration": 80,
+    "page_view_count": 2
+  },
+  {
+    "_id": {
+      "$oid": "9e3f2a523085494686520adb"
+    },
+    "ip_address": "192.168.112.78",
+    "country": "Australia",
+    "city": "Sydney",
+    "domain": "analytics.app",
+    "page_path": "/contact",
+    "page_title": "Contact",
+    "user_agent": "Mozilla/5.0 (iOS NT 10.0; Win64; x64; rv:126.0) Gecko/20100101 Edge/87.0",
+    "device_type": "tablet",
+    "device_browser": "Edge",
+    "device_os": "macOS",
+    "referrer": "",
+    "language": "en-GB",
+    "screen_resolution": "1440x900",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.942666Z"
+    },
+    "session_id": "b1ecac1b-a730-4dcd-9623-2205a837cdfa",
+    "session_start": {
+      "$date": "2025-06-01T10:31:48.942666Z"
+    },
+    "is_session_end": false,
+    "is_page_change": true,
+    "page_duration": 233,
+    "page_view_count": 7
+  },
+  {
+    "_id": {
+      "$oid": "e7c4967453f14380a7a437fc"
+    },
+    "ip_address": "192.168.193.161",
+    "country": "India",
+    "city": "Mumbai",
+    "domain": "example.com",
+    "page_path": "/home",
+    "page_title": "Product Page",
+    "user_agent": "Mozilla/5.0 (Android NT 10.0; Win64; x64; rv:112.0) Gecko/20100101 Chrome/135.0",
+    "device_type": "desktop",
+    "device_browser": "Firefox",
+    "device_os": "iOS",
+    "referrer": "",
+    "language": "en-US",
+    "screen_resolution": "1440x900",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.942754Z"
+    },
+    "session_id": "adaa8e4a-cb7f-49d0-9bfa-da8b94b75057",
+    "session_start": {
+      "$date": "2025-06-01T10:07:48.942754Z"
+    },
+    "is_session_end": false,
+    "is_page_change": false,
+    "page_duration": 202,
+    "page_view_count": 5
+  },
+  {
+    "_id": {
+      "$oid": "2461d4f697ec4175a5849fd2"
+    },
+    "ip_address": "192.168.132.197",
+    "country": "France",
+    "city": "Paris",
+    "domain": "analytics.app",
+    "page_path": "/product",
+    "page_title": "Dashboard",
+    "user_agent": "Mozilla/5.0 (macOS NT 10.0; Win64; x64; rv:80.0) Gecko/20100101 Safari/126.0",
+    "device_type": "mobile",
+    "device_browser": "Chrome",
+    "device_os": "macOS",
+    "referrer": "https://linkedin.com",
+    "language": "hi-IN",
+    "screen_resolution": "1440x900",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.942832Z"
+    },
+    "session_id": "4e830b46-f6ea-4460-9659-5566d578fd29",
+    "session_start": {
+      "$date": "2025-06-01T09:34:48.942832Z"
+    },
+    "is_session_end": false,
+    "is_page_change": true,
+    "page_duration": 298,
+    "page_view_count": 10
+  },
+  {
+    "_id": {
+      "$oid": "1244d8c37d364e158191e3c3"
+    },
+    "ip_address": "192.168.86.159",
+    "country": "Canada",
+    "city": "Toronto",
+    "domain": "analytics.app",
+    "page_path": "/contact",
+    "page_title": "Dashboard",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:106.0) Gecko/20100101 Safari/130.0",
+    "device_type": "mobile",
+    "device_browser": "Edge",
+    "device_os": "iOS",
+    "referrer": "https://linkedin.com",
+    "language": "de-DE",
+    "screen_resolution": "1440x900",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.942908Z"
+    },
+    "session_id": "a4f60a3c-f903-4838-afa5-18c094ecc4c3",
+    "session_start": {
+      "$date": "2025-06-01T09:50:48.942908Z"
+    },
+    "is_session_end": false,
+    "is_page_change": false,
+    "page_duration": 77,
+    "page_view_count": 2
+  },
+  {
+    "_id": {
+      "$oid": "87af69f580094ef684dc7678"
+    },
+    "ip_address": "192.168.146.76",
+    "country": "India",
+    "city": "Mumbai",
+    "domain": "analytics.app",
+    "page_path": "/home",
+    "page_title": "Dashboard",
+    "user_agent": "Mozilla/5.0 (Linux NT 10.0; Win64; x64; rv:119.0) Gecko/20100101 Edge/113.0",
+    "device_type": "mobile",
+    "device_browser": "Edge",
+    "device_os": "macOS",
+    "referrer": "",
+    "language": "en-GB",
+    "screen_resolution": "1440x900",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.942978Z"
+    },
+    "session_id": "16deeb0f-695b-4661-877a-0907b9bcbb0b",
+    "session_start": {
+      "$date": "2025-06-01T10:16:48.942978Z"
+    },
+    "is_session_end": true,
+    "is_page_change": false,
+    "page_duration": 24,
+    "page_view_count": 1
+  },
+  {
+    "_id": {
+      "$oid": "8c589d5bb9d144f6ace36045"
+    },
+    "ip_address": "192.168.44.252",
+    "country": "South Africa",
+    "city": "Cape Town",
+    "domain": "mysite.io",
+    "page_path": "/about",
+    "page_title": "Dashboard",
+    "user_agent": "Mozilla/5.0 (Linux NT 10.0; Win64; x64; rv:128.0) Gecko/20100101 Chrome/137.0",
+    "device_type": "mobile",
+    "device_browser": "Firefox",
+    "device_os": "Android",
+    "referrer": "",
+    "language": "ja-JP",
+    "screen_resolution": "1280x720",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.943057Z"
+    },
+    "session_id": "8ed2fae0-3079-4910-98d0-1bfccea63454",
+    "session_start": {
+      "$date": "2025-06-01T11:17:48.943057Z"
+    },
+    "is_session_end": true,
+    "is_page_change": true,
+    "page_duration": 295,
+    "page_view_count": 3
+  },
+  {
+    "_id": {
+      "$oid": "88462f81c8754983ba1e6948"
+    },
+    "ip_address": "192.168.62.46",
+    "country": "Germany",
+    "city": "Berlin",
+    "domain": "example.com",
+    "page_path": "/contact",
+    "page_title": "Home",
+    "user_agent": "Mozilla/5.0 (iOS NT 10.0; Win64; x64; rv:82.0) Gecko/20100101 Safari/118.0",
+    "device_type": "desktop",
+    "device_browser": "Chrome",
+    "device_os": "macOS",
+    "referrer": "https://twitter.com",
+    "language": "es-ES",
+    "screen_resolution": "1280x720",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.943141Z"
+    },
+    "session_id": "aa01fb56-0dc4-4129-bc85-b641fb7e86b7",
+    "session_start": {
+      "$date": "2025-06-01T09:42:48.943141Z"
+    },
+    "is_session_end": true,
+    "is_page_change": false,
+    "page_duration": 16,
+    "page_view_count": 3
+  },
+  {
+    "_id": {
+      "$oid": "0b3da95ae0664658af46474a"
+    },
+    "ip_address": "192.168.117.214",
+    "country": "India",
+    "city": "Mumbai",
+    "domain": "example.com",
+    "page_path": "/product",
+    "page_title": "Dashboard",
+    "user_agent": "Mozilla/5.0 (Linux NT 10.0; Win64; x64; rv:128.0) Gecko/20100101 Edge/125.0",
+    "device_type": "tablet",
+    "device_browser": "Firefox",
+    "device_os": "iOS",
+    "referrer": "https://google.com",
+    "language": "es-ES",
+    "screen_resolution": "1536x864",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.943218Z"
+    },
+    "session_id": "4b42e65f-b5ff-493f-9c37-95b3bd0e85bd",
+    "session_start": {
+      "$date": "2025-06-01T10:05:48.943218Z"
+    },
+    "is_session_end": true,
+    "is_page_change": true,
+    "page_duration": 285,
+    "page_view_count": 6
+  },
+  {
+    "_id": {
+      "$oid": "08f08352bcf34bc5aa1b9105"
+    },
+    "ip_address": "192.168.56.197",
+    "country": "UK",
+    "city": "London",
+    "domain": "localhost",
+    "page_path": "/",
+    "page_title": "About Us",
+    "user_agent": "Mozilla/5.0 (macOS NT 10.0; Win64; x64; rv:137.0) Gecko/20100101 Firefox/93.0",
+    "device_type": "tablet",
+    "device_browser": "Edge",
+    "device_os": "Android",
+    "referrer": "https://twitter.com",
+    "language": "de-DE",
+    "screen_resolution": "1920x1080",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.943315Z"
+    },
+    "session_id": "8e5c8c9f-e428-46f4-8b8f-f5899b491746",
+    "session_start": {
+      "$date": "2025-06-01T11:26:48.943315Z"
+    },
+    "is_session_end": false,
+    "is_page_change": true,
+    "page_duration": 209,
+    "page_view_count": 9
+  },
+  {
+    "_id": {
+      "$oid": "d665a9dc028e423eafabc104"
+    },
+    "ip_address": "192.168.179.75",
+    "country": "South Africa",
+    "city": "Cape Town",
+    "domain": "mysite.io",
+    "page_path": "/product",
+    "page_title": "Dashboard",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:122.0) Gecko/20100101 Chrome/119.0",
+    "device_type": "mobile",
+    "device_browser": "Chrome",
+    "device_os": "Windows",
+    "referrer": "https://linkedin.com",
+    "language": "en-US",
+    "screen_resolution": "1366x768",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.943415Z"
+    },
+    "session_id": "7dcfb0ba-dbaf-4355-8e79-3194326d56c8",
+    "session_start": {
+      "$date": "2025-06-01T10:39:48.943415Z"
+    },
+    "is_session_end": false,
+    "is_page_change": false,
+    "page_duration": 96,
+    "page_view_count": 2
+  },
+  {
+    "_id": {
+      "$oid": "418cd9ba0f9b4199a5c90505"
+    },
+    "ip_address": "192.168.125.68",
+    "country": "South Africa",
+    "city": "Cape Town",
+    "domain": "analytics.app",
+    "page_path": "/contact",
+    "page_title": "Contact",
+    "user_agent": "Mozilla/5.0 (Android NT 10.0; Win64; x64; rv:98.0) Gecko/20100101 Firefox/81.0",
+    "device_type": "mobile",
+    "device_browser": "Safari",
+    "device_os": "Windows",
+    "referrer": "https://twitter.com",
+    "language": "en-US",
+    "screen_resolution": "1536x864",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.943501Z"
+    },
+    "session_id": "3a58bfa4-43c7-4be8-8bef-feae620c7d1c",
+    "session_start": {
+      "$date": "2025-06-01T10:19:48.943501Z"
+    },
+    "is_session_end": false,
+    "is_page_change": false,
+    "page_duration": 154,
+    "page_view_count": 7
+  },
+  {
+    "_id": {
+      "$oid": "e4162e42a1b442e88e562c97"
+    },
+    "ip_address": "192.168.199.127",
+    "country": "UK",
+    "city": "London",
+    "domain": "analytics.app",
+    "page_path": "/home",
+    "page_title": "Dashboard",
+    "user_agent": "Mozilla/5.0 (Android NT 10.0; Win64; x64; rv:97.0) Gecko/20100101 Firefox/104.0",
+    "device_type": "tablet",
+    "device_browser": "Safari",
+    "device_os": "macOS",
+    "referrer": "https://linkedin.com",
+    "language": "de-DE",
+    "screen_resolution": "1536x864",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.943568Z"
+    },
+    "session_id": "98901527-168b-4178-8b70-33f8afa613f3",
+    "session_start": {
+      "$date": "2025-06-01T10:15:48.943568Z"
+    },
+    "is_session_end": true,
+    "is_page_change": false,
+    "page_duration": 17,
+    "page_view_count": 5
+  },
+  {
+    "_id": {
+      "$oid": "0a8c2f5c476b4b26b327f1e8"
+    },
+    "ip_address": "192.168.101.83",
+    "country": "Japan",
+    "city": "Tokyo",
+    "domain": "localhost",
+    "page_path": "/contact",
+    "page_title": "Product Page",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:97.0) Gecko/20100101 Edge/110.0",
+    "device_type": "mobile",
+    "device_browser": "Safari",
+    "device_os": "iOS",
+    "referrer": "https://google.com",
+    "language": "ja-JP",
+    "screen_resolution": "1440x900",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.943644Z"
+    },
+    "session_id": "caa9cc27-3598-424f-a298-b254e9236eb8",
+    "session_start": {
+      "$date": "2025-06-01T09:30:48.943644Z"
+    },
+    "is_session_end": false,
+    "is_page_change": true,
+    "page_duration": 251,
+    "page_view_count": 5
+  },
+  {
+    "_id": {
+      "$oid": "a7c0a30b00cd468a8d949fd1"
+    },
+    "ip_address": "192.168.183.131",
+    "country": "UK",
+    "city": "London",
+    "domain": "localhost",
+    "page_path": "/contact",
+    "page_title": "Product Page",
+    "user_agent": "Mozilla/5.0 (iOS NT 10.0; Win64; x64; rv:87.0) Gecko/20100101 Chrome/103.0",
+    "device_type": "mobile",
+    "device_browser": "Chrome",
+    "device_os": "iOS",
+    "referrer": "https://twitter.com",
+    "language": "en-US",
+    "screen_resolution": "1536x864",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.943716Z"
+    },
+    "session_id": "03bd49c9-588c-42d1-8488-f583427f8df3",
+    "session_start": {
+      "$date": "2025-06-01T09:56:48.943716Z"
+    },
+    "is_session_end": true,
+    "is_page_change": true,
+    "page_duration": 107,
+    "page_view_count": 9
+  },
+  {
+    "_id": {
+      "$oid": "cc0e81d70789425d8888a38f"
+    },
+    "ip_address": "192.168.94.230",
+    "country": "Germany",
+    "city": "Berlin",
+    "domain": "example.com",
+    "page_path": "/about",
+    "page_title": "Home",
+    "user_agent": "Mozilla/5.0 (macOS NT 10.0; Win64; x64; rv:127.0) Gecko/20100101 Chrome/97.0",
+    "device_type": "desktop",
+    "device_browser": "Safari",
+    "device_os": "Android",
+    "referrer": "https://google.com",
+    "language": "de-DE",
+    "screen_resolution": "1280x720",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.943789Z"
+    },
+    "session_id": "ce47cfd4-3b42-4594-ac83-45f9f7c767ea",
+    "session_start": {
+      "$date": "2025-06-01T10:31:48.943789Z"
+    },
+    "is_session_end": false,
+    "is_page_change": true,
+    "page_duration": 270,
+    "page_view_count": 4
+  },
+  {
+    "_id": {
+      "$oid": "cf7dbffd32fe4d8792d5c40c"
+    },
+    "ip_address": "192.168.118.76",
+    "country": "India",
+    "city": "Mumbai",
+    "domain": "mysite.io",
+    "page_path": "/about",
+    "page_title": "Contact",
+    "user_agent": "Mozilla/5.0 (Android NT 10.0; Win64; x64; rv:114.0) Gecko/20100101 Safari/105.0",
+    "device_type": "tablet",
+    "device_browser": "Edge",
+    "device_os": "iOS",
+    "referrer": "https://linkedin.com",
+    "language": "en-US",
+    "screen_resolution": "1920x1080",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.943859Z"
+    },
+    "session_id": "5304d49e-83e0-4c6c-8d2f-d2c6b3e345a3",
+    "session_start": {
+      "$date": "2025-06-01T11:04:48.943859Z"
+    },
+    "is_session_end": false,
+    "is_page_change": false,
+    "page_duration": 170,
+    "page_view_count": 5
+  },
+  {
+    "_id": {
+      "$oid": "151d501295c94b07b02c4361"
+    },
+    "ip_address": "192.168.234.70",
+    "country": "United States",
+    "city": "New York",
+    "domain": "analytics.app",
+    "page_path": "/pricing",
+    "page_title": "Product Page",
+    "user_agent": "Mozilla/5.0 (macOS NT 10.0; Win64; x64; rv:108.0) Gecko/20100101 Chrome/135.0",
+    "device_type": "mobile",
+    "device_browser": "Firefox",
+    "device_os": "iOS",
+    "referrer": "https://linkedin.com",
+    "language": "en-US",
+    "screen_resolution": "1366x768",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.943932Z"
+    },
+    "session_id": "261a2240-48ef-46f1-ad63-b383a50e64c3",
+    "session_start": {
+      "$date": "2025-06-01T11:22:48.943932Z"
+    },
+    "is_session_end": false,
+    "is_page_change": true,
+    "page_duration": 156,
+    "page_view_count": 6
+  },
+  {
+    "_id": {
+      "$oid": "c31c334d1d11498a80a0235b"
+    },
+    "ip_address": "192.168.218.157",
+    "country": "Brazil",
+    "city": "S\u00e3o Paulo",
+    "domain": "example.com",
+    "page_path": "/contact",
+    "page_title": "Home",
+    "user_agent": "Mozilla/5.0 (iOS NT 10.0; Win64; x64; rv:86.0) Gecko/20100101 Edge/114.0",
+    "device_type": "mobile",
+    "device_browser": "Edge",
+    "device_os": "Android",
+    "referrer": "https://linkedin.com",
+    "language": "en-US",
+    "screen_resolution": "1440x900",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.944007Z"
+    },
+    "session_id": "2c7dbda7-a542-403e-83b2-20935be80ba0",
+    "session_start": {
+      "$date": "2025-06-01T10:10:48.944007Z"
+    },
+    "is_session_end": true,
+    "is_page_change": false,
+    "page_duration": 173,
+    "page_view_count": 3
+  },
+  {
+    "_id": {
+      "$oid": "4d5220e3ef8e45f8855c1b6a"
+    },
+    "ip_address": "192.168.33.100",
+    "country": "India",
+    "city": "Mumbai",
+    "domain": "analytics.app",
+    "page_path": "/product",
+    "page_title": "Pricing",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) Gecko/20100101 Edge/90.0",
+    "device_type": "mobile",
+    "device_browser": "Edge",
+    "device_os": "iOS",
+    "referrer": "https://google.com",
+    "language": "fr-FR",
+    "screen_resolution": "1366x768",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.944090Z"
+    },
+    "session_id": "ceca107d-1b3a-4cd9-92ad-5f641953434e",
+    "session_start": {
+      "$date": "2025-06-01T10:40:48.944090Z"
+    },
+    "is_session_end": true,
+    "is_page_change": true,
+    "page_duration": 109,
+    "page_view_count": 10
+  },
+  {
+    "_id": {
+      "$oid": "d2740bfa8f4e4ef787c655ed"
+    },
+    "ip_address": "192.168.118.189",
+    "country": "Germany",
+    "city": "Berlin",
+    "domain": "mysite.io",
+    "page_path": "/",
+    "page_title": "Contact",
+    "user_agent": "Mozilla/5.0 (macOS NT 10.0; Win64; x64; rv:117.0) Gecko/20100101 Safari/99.0",
+    "device_type": "mobile",
+    "device_browser": "Safari",
+    "device_os": "iOS",
+    "referrer": "",
+    "language": "fr-FR",
+    "screen_resolution": "1366x768",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.944171Z"
+    },
+    "session_id": "2ae0e30b-5b27-431e-a2da-a1e379673608",
+    "session_start": {
+      "$date": "2025-06-01T11:21:48.944171Z"
+    },
+    "is_session_end": false,
+    "is_page_change": true,
+    "page_duration": 266,
+    "page_view_count": 6
+  },
+  {
+    "_id": {
+      "$oid": "63f1f0ae1c3d4260afa262e9"
+    },
+    "ip_address": "192.168.173.239",
+    "country": "Brazil",
+    "city": "S\u00e3o Paulo",
+    "domain": "mysite.io",
+    "page_path": "/home",
+    "page_title": "Pricing",
+    "user_agent": "Mozilla/5.0 (macOS NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Chrome/92.0",
+    "device_type": "tablet",
+    "device_browser": "Firefox",
+    "device_os": "Linux",
+    "referrer": "https://linkedin.com",
+    "language": "hi-IN",
+    "screen_resolution": "1536x864",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.944256Z"
+    },
+    "session_id": "dbd0dd04-4ac3-46a6-83b0-bbee2e266fbc",
+    "session_start": {
+      "$date": "2025-06-01T09:39:48.944256Z"
+    },
+    "is_session_end": true,
+    "is_page_change": false,
+    "page_duration": 18,
+    "page_view_count": 7
+  },
+  {
+    "_id": {
+      "$oid": "a5ad8b1cd8c941db97b5a41b"
+    },
+    "ip_address": "192.168.39.65",
+    "country": "Australia",
+    "city": "Sydney",
+    "domain": "localhost",
+    "page_path": "/",
+    "page_title": "Product Page",
+    "user_agent": "Mozilla/5.0 (iOS NT 10.0; Win64; x64; rv:119.0) Gecko/20100101 Chrome/115.0",
+    "device_type": "tablet",
+    "device_browser": "Firefox",
+    "device_os": "Android",
+    "referrer": "https://linkedin.com",
+    "language": "en-GB",
+    "screen_resolution": "1366x768",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.944335Z"
+    },
+    "session_id": "e13903fa-12ad-430e-a59b-ef1cc3cfff44",
+    "session_start": {
+      "$date": "2025-06-01T10:21:48.944335Z"
+    },
+    "is_session_end": false,
+    "is_page_change": true,
+    "page_duration": 40,
+    "page_view_count": 7
+  },
+  {
+    "_id": {
+      "$oid": "7ea41cb4d9e3408d8a266c25"
+    },
+    "ip_address": "192.168.103.22",
+    "country": "South Africa",
+    "city": "Cape Town",
+    "domain": "example.com",
+    "page_path": "/product",
+    "page_title": "Product Page",
+    "user_agent": "Mozilla/5.0 (iOS NT 10.0; Win64; x64; rv:91.0) Gecko/20100101 Firefox/108.0",
+    "device_type": "mobile",
+    "device_browser": "Firefox",
+    "device_os": "Android",
+    "referrer": "https://twitter.com",
+    "language": "es-ES",
+    "screen_resolution": "1440x900",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.944412Z"
+    },
+    "session_id": "42e50266-b70d-49ce-b63c-ef044d2e081d",
+    "session_start": {
+      "$date": "2025-06-01T10:49:48.944412Z"
+    },
+    "is_session_end": true,
+    "is_page_change": true,
+    "page_duration": 194,
+    "page_view_count": 3
+  },
+  {
+    "_id": {
+      "$oid": "fc8647ace6f846da86f95f2c"
+    },
+    "ip_address": "192.168.87.27",
+    "country": "UK",
+    "city": "London",
+    "domain": "example.com",
+    "page_path": "/pricing",
+    "page_title": "Pricing",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:132.0) Gecko/20100101 Safari/128.0",
+    "device_type": "tablet",
+    "device_browser": "Safari",
+    "device_os": "iOS",
+    "referrer": "https://linkedin.com",
+    "language": "ja-JP",
+    "screen_resolution": "1440x900",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.944487Z"
+    },
+    "session_id": "0e847f7b-e711-4eea-9541-11c8d5795811",
+    "session_start": {
+      "$date": "2025-06-01T09:36:48.944487Z"
+    },
+    "is_session_end": false,
+    "is_page_change": false,
+    "page_duration": 99,
+    "page_view_count": 1
+  },
+  {
+    "_id": {
+      "$oid": "5a26861eeb7f41dbb93ec497"
+    },
+    "ip_address": "192.168.69.17",
+    "country": "Brazil",
+    "city": "S\u00e3o Paulo",
+    "domain": "analytics.app",
+    "page_path": "/product",
+    "page_title": "About Us",
+    "user_agent": "Mozilla/5.0 (Linux NT 10.0; Win64; x64; rv:84.0) Gecko/20100101 Safari/133.0",
+    "device_type": "tablet",
+    "device_browser": "Chrome",
+    "device_os": "Android",
+    "referrer": "https://linkedin.com",
+    "language": "en-GB",
+    "screen_resolution": "1440x900",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.944568Z"
+    },
+    "session_id": "e3e860ed-5f64-4a04-bef6-37f16ac03c1f",
+    "session_start": {
+      "$date": "2025-06-01T11:16:48.944568Z"
+    },
+    "is_session_end": false,
+    "is_page_change": true,
+    "page_duration": 155,
+    "page_view_count": 8
+  },
+  {
+    "_id": {
+      "$oid": "189a8508fa8d4833b327db49"
+    },
+    "ip_address": "192.168.219.47",
+    "country": "Brazil",
+    "city": "S\u00e3o Paulo",
+    "domain": "example.com",
+    "page_path": "/pricing",
+    "page_title": "Contact",
+    "user_agent": "Mozilla/5.0 (Linux NT 10.0; Win64; x64; rv:96.0) Gecko/20100101 Chrome/90.0",
+    "device_type": "desktop",
+    "device_browser": "Firefox",
+    "device_os": "Android",
+    "referrer": "https://linkedin.com",
+    "language": "en-GB",
+    "screen_resolution": "1920x1080",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.944645Z"
+    },
+    "session_id": "064c751e-6ff9-4ca8-841e-ba020296b29f",
+    "session_start": {
+      "$date": "2025-06-01T10:29:48.944645Z"
+    },
+    "is_session_end": false,
+    "is_page_change": true,
+    "page_duration": 193,
+    "page_view_count": 9
+  },
+  {
+    "_id": {
+      "$oid": "053a78866e3447cfb2f9ea1d"
+    },
+    "ip_address": "192.168.44.236",
+    "country": "United States",
+    "city": "New York",
+    "domain": "localhost",
+    "page_path": "/contact",
+    "page_title": "Product Page",
+    "user_agent": "Mozilla/5.0 (iOS NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Chrome/124.0",
+    "device_type": "tablet",
+    "device_browser": "Safari",
+    "device_os": "macOS",
+    "referrer": "https://linkedin.com",
+    "language": "de-DE",
+    "screen_resolution": "1366x768",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.944713Z"
+    },
+    "session_id": "ddeb6284-410e-41ce-8323-d3324a7db222",
+    "session_start": {
+      "$date": "2025-06-01T09:30:48.944713Z"
+    },
+    "is_session_end": false,
+    "is_page_change": false,
+    "page_duration": 65,
+    "page_view_count": 1
+  },
+  {
+    "_id": {
+      "$oid": "c52b27e4f06b4d389c656a96"
+    },
+    "ip_address": "192.168.240.178",
+    "country": "Brazil",
+    "city": "S\u00e3o Paulo",
+    "domain": "mysite.io",
+    "page_path": "/product",
+    "page_title": "Dashboard",
+    "user_agent": "Mozilla/5.0 (Linux NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Safari/114.0",
+    "device_type": "mobile",
+    "device_browser": "Chrome",
+    "device_os": "macOS",
+    "referrer": "https://google.com",
+    "language": "en-US",
+    "screen_resolution": "1440x900",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.944789Z"
+    },
+    "session_id": "659a5e3f-991f-4044-a42d-1648e06d980e",
+    "session_start": {
+      "$date": "2025-06-01T09:54:48.944789Z"
+    },
+    "is_session_end": true,
+    "is_page_change": false,
+    "page_duration": 201,
+    "page_view_count": 8
+  },
+  {
+    "_id": {
+      "$oid": "30448be362974b7484decf03"
+    },
+    "ip_address": "192.168.106.52",
+    "country": "France",
+    "city": "Paris",
+    "domain": "analytics.app",
+    "page_path": "/pricing",
+    "page_title": "Home",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:133.0) Gecko/20100101 Chrome/134.0",
+    "device_type": "tablet",
+    "device_browser": "Safari",
+    "device_os": "Android",
+    "referrer": "",
+    "language": "fr-FR",
+    "screen_resolution": "1440x900",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.944873Z"
+    },
+    "session_id": "397c24c9-1e5f-47c0-936c-aeaab5432722",
+    "session_start": {
+      "$date": "2025-06-01T10:54:48.944873Z"
+    },
+    "is_session_end": false,
+    "is_page_change": true,
+    "page_duration": 147,
+    "page_view_count": 7
+  },
+  {
+    "_id": {
+      "$oid": "785faaccb7ba4adebc24415a"
+    },
+    "ip_address": "192.168.151.9",
+    "country": "South Africa",
+    "city": "Cape Town",
+    "domain": "mysite.io",
+    "page_path": "/pricing",
+    "page_title": "Dashboard",
+    "user_agent": "Mozilla/5.0 (macOS NT 10.0; Win64; x64; rv:108.0) Gecko/20100101 Chrome/105.0",
+    "device_type": "desktop",
+    "device_browser": "Safari",
+    "device_os": "Windows",
+    "referrer": "https://google.com",
+    "language": "fr-FR",
+    "screen_resolution": "1440x900",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.944943Z"
+    },
+    "session_id": "2317a851-f751-4e97-aed7-cd843d64158a",
+    "session_start": {
+      "$date": "2025-06-01T10:05:48.944943Z"
+    },
+    "is_session_end": true,
+    "is_page_change": false,
+    "page_duration": 200,
+    "page_view_count": 9
+  },
+  {
+    "_id": {
+      "$oid": "e0c57d621fcb400194228ad2"
+    },
+    "ip_address": "192.168.6.164",
+    "country": "UK",
+    "city": "London",
+    "domain": "localhost",
+    "page_path": "/home",
+    "page_title": "Dashboard",
+    "user_agent": "Mozilla/5.0 (Android NT 10.0; Win64; x64; rv:113.0) Gecko/20100101 Chrome/140.0",
+    "device_type": "mobile",
+    "device_browser": "Edge",
+    "device_os": "iOS",
+    "referrer": "",
+    "language": "es-ES",
+    "screen_resolution": "1366x768",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.945015Z"
+    },
+    "session_id": "6a6766e1-f4ba-40fc-9445-61acd39e5544",
+    "session_start": {
+      "$date": "2025-06-01T11:19:48.945015Z"
+    },
+    "is_session_end": false,
+    "is_page_change": true,
+    "page_duration": 194,
+    "page_view_count": 3
+  },
+  {
+    "_id": {
+      "$oid": "b422b2c411514bc68c0eb5c7"
+    },
+    "ip_address": "192.168.109.51",
+    "country": "Brazil",
+    "city": "S\u00e3o Paulo",
+    "domain": "analytics.app",
+    "page_path": "/home",
+    "page_title": "About Us",
+    "user_agent": "Mozilla/5.0 (macOS NT 10.0; Win64; x64; rv:90.0) Gecko/20100101 Firefox/125.0",
+    "device_type": "tablet",
+    "device_browser": "Edge",
+    "device_os": "Windows",
+    "referrer": "https://twitter.com",
+    "language": "ja-JP",
+    "screen_resolution": "1920x1080",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.945089Z"
+    },
+    "session_id": "5864b18c-b91c-42b8-beba-98141c584a29",
+    "session_start": {
+      "$date": "2025-06-01T10:58:48.945089Z"
+    },
+    "is_session_end": false,
+    "is_page_change": false,
+    "page_duration": 271,
+    "page_view_count": 7
+  },
+  {
+    "_id": {
+      "$oid": "7778d2289bb34f56b4cb81ba"
+    },
+    "ip_address": "192.168.188.178",
+    "country": "UK",
+    "city": "London",
+    "domain": "example.com",
+    "page_path": "/pricing",
+    "page_title": "Contact",
+    "user_agent": "Mozilla/5.0 (Android NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Edge/88.0",
+    "device_type": "tablet",
+    "device_browser": "Safari",
+    "device_os": "Windows",
+    "referrer": "",
+    "language": "de-DE",
+    "screen_resolution": "1920x1080",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.945168Z"
+    },
+    "session_id": "1755b726-3f4b-44e0-8aa3-7f0c2afa9eec",
+    "session_start": {
+      "$date": "2025-06-01T10:32:48.945168Z"
+    },
+    "is_session_end": true,
+    "is_page_change": true,
+    "page_duration": 208,
+    "page_view_count": 3
+  },
+  {
+    "_id": {
+      "$oid": "4a1d2cd3cfa74399a966247d"
+    },
+    "ip_address": "192.168.90.221",
+    "country": "United States",
+    "city": "New York",
+    "domain": "mysite.io",
+    "page_path": "/pricing",
+    "page_title": "Dashboard",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:100.0) Gecko/20100101 Edge/129.0",
+    "device_type": "tablet",
+    "device_browser": "Safari",
+    "device_os": "Android",
+    "referrer": "https://google.com",
+    "language": "es-ES",
+    "screen_resolution": "1440x900",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.945227Z"
+    },
+    "session_id": "8ef707f8-d41b-4278-8631-1e00253f7805",
+    "session_start": {
+      "$date": "2025-06-01T09:37:48.945227Z"
+    },
+    "is_session_end": true,
+    "is_page_change": false,
+    "page_duration": 129,
+    "page_view_count": 3
+  },
+  {
+    "_id": {
+      "$oid": "4cebe91fd4224040a71f789d"
+    },
+    "ip_address": "192.168.224.229",
+    "country": "Japan",
+    "city": "Tokyo",
+    "domain": "localhost",
+    "page_path": "/about",
+    "page_title": "Home",
+    "user_agent": "Mozilla/5.0 (Linux NT 10.0; Win64; x64; rv:140.0) Gecko/20100101 Edge/105.0",
+    "device_type": "tablet",
+    "device_browser": "Edge",
+    "device_os": "Linux",
+    "referrer": "",
+    "language": "fr-FR",
+    "screen_resolution": "1920x1080",
+    "timestamp": {
+      "$date": "2025-06-01T11:30:48.945323Z"
+    },
+    "session_id": "44645a6b-f5d1-4786-83d0-056a4bbd8e22",
+    "session_start": {
+      "$date": "2025-06-01T10:58:48.945323Z"
+    },
+    "is_session_end": false,
+    "is_page_change": false,
+    "page_duration": 45,
+    "page_view_count": 8
+  }
+]

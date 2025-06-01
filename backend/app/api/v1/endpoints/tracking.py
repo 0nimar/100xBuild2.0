@@ -471,6 +471,7 @@ async def get_domain_analytics(domain: str):
                 try:
                     parsed = urlparse(referrer)
                     referrer = parsed.netloc or "Direct"
+                    referrer = doc.get("referrer")
                 except:
                     referrer = "Direct"
             analytics["referrers"][referrer] = analytics["referrers"].get(referrer, 0) + 1
