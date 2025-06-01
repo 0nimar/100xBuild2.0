@@ -1,6 +1,6 @@
 from fastapi import FastAPI, WebSocket
 from fastapi.middleware.cors import CORSMiddleware
-from app.api.v1.endpoints import test, tracking
+from app.api.v1.endpoints import test, tracking, chat
 from app.db.mongodb import mongodb
 from typing import List
 
@@ -26,7 +26,7 @@ app.add_middleware(
 # Include routers
 app.include_router(test.router, prefix="/api/v1", tags=["test"])
 app.include_router(tracking.router, prefix="/api/v1", tags=["tracking"])
-
+app.include_router(chat.router, prefix="/api/v1", tags=["chat"])
 @app.get("/")
 async def root():
     return {"message": "Welcome to FastAPI Template"}

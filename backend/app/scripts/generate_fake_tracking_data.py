@@ -153,7 +153,7 @@ def generate_session_data(num_sessions: int = 100) -> List[Dict[str, Any]]:
 
 def main():
     # Generate 500 sessions worth of data
-    fake_data = generate_session_data(500)
+    fake_data = generate_session_data(50)
     
     # Save to JSON file
     output_file = "fake_tracking_data.json"
