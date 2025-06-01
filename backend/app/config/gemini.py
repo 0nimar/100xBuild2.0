@@ -5,5 +5,5 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Gemini Configuration
-GEMINI_API_KEY = ""
-GEMINI_MODEL_NAME = ""  # or "gemini-pro-vision" if you need vision capabilities 
+GEMINI_API_KEY = "-"
+GEMINI_MODEL_NAME = "="  # or "gemini-pro-vision" if you need vision capabilities 
