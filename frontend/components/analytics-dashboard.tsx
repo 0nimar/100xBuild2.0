@@ -5,7 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Counter } from "./components/Counter"
+import { Counter } from "./Counter"
 import { DateRangePicker } from "@/components/ui/date-range-picker"
 import { addDays, subDays } from "date-fns"
 import {
@@ -29,6 +29,7 @@ import {
   ChartLegendContent,
 } from "@/components/ui/chart"
 import { Globe, Users, Eye, Clock, Smartphone, Monitor, Tablet, RefreshCw, TrendingUp, Activity } from "lucide-react"
+import DataCard from "./data-card"
 
 interface DomainData {
   domain: string
@@ -216,8 +217,8 @@ export default function AnalyticsDashboard() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800">
-      <div className="container mx-auto p-6 space-y-8">
+    <div className="bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800 w-full h-full">
+      <div className="container space-y-8">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div>
@@ -230,7 +231,7 @@ export default function AnalyticsDashboard() {
           <div className="flex items-center gap-4">
             <DateRangePicker
               value={dateRange}
-              onChange={setDateRange}
+              onChange={(value)=>{setDateRange(value as DateRange)}}
               className="bg-white dark:bg-slate-800"
             />
             
@@ -274,7 +275,7 @@ export default function AnalyticsDashboard() {
                     key={`${type}-${value}`}
                     variant="secondary"
                     className="cursor-pointer hover:bg-slate-200 dark:hover:bg-slate-700"
-                    onClick={() => handleFilterClick(type as FilterType, value)}
+                    onClick={() => handleFilterClick(type as FilterType, value as string)}
                   >
                     {type}: {value} ×
                   </Badge>
@@ -302,100 +303,56 @@ export default function AnalyticsDashboard() {
 
             {/* Key Metrics */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <Card className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950 dark:to-blue-900 border-blue-200 dark:border-blue-800">
-                <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                  <CardTitle className="text-sm font-medium">Total Page Views</CardTitle>
-                  <Eye className="h-4 w-4 text-blue-600" />
-                </CardHeader>
-                <CardContent>
-                  <div className="text-2xl font-bold text-blue-700 dark:text-blue-300">
-                    {analyticsData.total_page_views.toLocaleString()}
-                  </div>
-                  <p className="text-xs text-blue-600 dark:text-blue-400 mt-1">
-                    <TrendingUp className="w-3 h-3 inline mr-1" />
-                    +12% from last month
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="bg-gradient-to-br from-green-50 to-green-100 dark:from-green-950 dark:to-green-900 border-green-200 dark:border-green-800">
-                <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                  <CardTitle className="text-sm font-medium">Unique Visitors</CardTitle>
-                  <Users className="h-4 w-4 text-green-600" />
-                </CardHeader>
-                <CardContent>
-                  <div className="text-2xl font-bold text-green-700 dark:text-green-300">
-                    {analyticsData.unique_visitors.toLocaleString()}
-                  </div>
-                  <p className="text-xs text-green-600 dark:text-green-400 mt-1">
-                    <TrendingUp className="w-3 h-3 inline mr-1" />
-                    +8% from last month
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-950 dark:to-purple-900 border-purple-200 dark:border-purple-800">
-                <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                  <CardTitle className="text-sm font-medium">Total Sessions</CardTitle>
-                  <Activity className="h-4 w-4 text-purple-600" />
-                </CardHeader>
-                <CardContent>
-                  <div className="text-2xl font-bold text-purple-700 dark:text-purple-300">
-                    {analyticsData.total_sessions.toLocaleString()}
-                  </div>
-                  <p className="text-xs text-purple-600 dark:text-purple-400 mt-1">
-                    <TrendingUp className="w-3 h-3 inline mr-1" />
-                    +15% from last month
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="bg-gradient-to-br from-orange-50 to-orange-100 dark:from-orange-950 dark:to-orange-900 border-orange-200 dark:border-orange-800">
-                <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                  <CardTitle className="text-sm font-medium">Avg. Session Duration</CardTitle>
-                  <Clock className="h-4 w-4 text-orange-600" />
-                </CardHeader>
-                <CardContent>
-                  <div className="text-2xl font-bold text-orange-700 dark:text-orange-300">
-                    {formatDuration(analyticsData.average_session_duration)}
-                  </div>
-                  <p className="text-xs text-orange-600 dark:text-orange-400 mt-1">
-                    <TrendingUp className="w-3 h-3 inline mr-1" />
-                    +5% from last month
-                  </p>
-                </CardContent>
-              </Card>
-
+              <DataCard 
+              data={{
+                title:"Total Page Views",
+                trending:true,
+                icon:Eye,
+                trendingEnabled:true,
+                themeColor:"blue",
+                content:analyticsData.total_page_views.toLocaleString(),
+                trendingCent:"12"
+              }}
+              />
+              <DataCard data={{  title:"Unique Visitors",
+                trending:true,
+                icon:Users,
+                trendingEnabled:true,
+                themeColor:"green",
+                content:analyticsData.unique_visitors.toLocaleString(),
+                trendingCent:"8"}}/>
+               <DataCard data={{  title:"Total Sessions",
+                trending:true,
+                trendingEnabled:true,
+                icon:Activity,
+                themeColor:"purple",
+                content:analyticsData.unique_sessions.toLocaleString(),
+                trendingCent:"15"}}/>
+              <DataCard data={{  title:"Avg. Session Duration",
+                trending:true,
+                trendingEnabled:true,
+                icon:Activity,
+                themeColor:"orange",
+                content:formatDuration(analyticsData.average_session_duration),
+                trendingCent:"5"}}/>
+              
               {/* New Metrics */}
-              <Card className="bg-gradient-to-br from-pink-50 to-pink-100 dark:from-pink-950 dark:to-pink-900 border-pink-200 dark:border-pink-800">
-                <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                  <CardTitle className="text-sm font-medium">Bounce Rate</CardTitle>
-                  <Activity className="h-4 w-4 text-pink-600" />
-                </CardHeader>
-                <CardContent>
-                  <div className="text-2xl font-bold text-pink-700 dark:text-pink-300">
-                    {analyticsData.bounce_rate?.toFixed(1)}%
-                  </div>
-                  <p className="text-xs text-pink-600 dark:text-pink-400 mt-1">
-                    Single-page sessions
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="bg-gradient-to-br from-indigo-50 to-indigo-100 dark:from-indigo-950 dark:to-indigo-900 border-indigo-200 dark:border-indigo-800">
-                <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                  <CardTitle className="text-sm font-medium">Pages/Session</CardTitle>
-                  <Activity className="h-4 w-4 text-indigo-600" />
-                </CardHeader>
-                <CardContent>
-                  <div className="text-2xl font-bold text-indigo-700 dark:text-indigo-300">
-                    {analyticsData.pages_per_session?.toFixed(1)}
-                  </div>
-                  <p className="text-xs text-indigo-600 dark:text-indigo-400 mt-1">
-                    Average pages viewed
-                  </p>
-                </CardContent>
-              </Card>
+              <DataCard
+              data={{title:"Bounce Rate",
+                trendingEnabled:false,
+                icon:Activity,
+                themeColor:"pink",
+                content:`${analyticsData.bounce_rate?.toFixed(1)}%`,
+                contentDetails:"Single-page sessions"}}
+              />
+                <DataCard
+              data={{title:"Pages/Session",
+                trendingEnabled:false,
+                icon:Activity,
+                themeColor:"indigo",
+                content:analyticsData.pages_per_session?.toFixed(1),
+                contentDetails:"Average pages viewed",
+              }}/>
             </div>
 
             {/* Charts Section */}

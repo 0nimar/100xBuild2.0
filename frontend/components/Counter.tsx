@@ -27,7 +27,7 @@ export function Counter() {
 
   return (
     <div className="flex items-center gap-1.5 text-sm text-muted-foreground">
-      <div className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" />
+      <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
       <span>{activeConnections} active</span>
     </div>
   );
