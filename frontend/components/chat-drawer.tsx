@@ -41,7 +41,7 @@ export default function ChatDrawer({ props }: { props: ChatDrawerProps }) {
         setIsLoading(true);
 
         try {
-            const response = await fetch('http://localhost:8000/api/v1/send', {
+            const response = await fetch('http://https://e5a9-27-7-148-160.ngrok-free.app/api/v1/send', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

@@ -7,7 +7,7 @@ export function Counter() {
   const [ws, setWs] = useState<WebSocket | null>(null);
 
   useEffect(() => {
-    const websocket = new WebSocket('ws://localhost:8000/ws/counter');
+    const websocket = new WebSocket('ws://https://e5a9-27-7-148-160.ngrok-free.app/ws/counter');
 
     websocket.onmessage = (event) => {
       const data = JSON.parse(event.data);
