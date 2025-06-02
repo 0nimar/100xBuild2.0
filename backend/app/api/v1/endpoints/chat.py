@@ -8,7 +8,7 @@ from .tracking import get_domain_analytics as get_tracking_analytics
 from functools import lru_cache
 import json
 import os
-
+from app.services.chat import chat_history
 router = APIRouter()
 
 # Configure Gemini
@@ -54,17 +54,21 @@ def get_model(domain_analytics: str):
 async def send(request: ChatRequest):
     try:
         # Get the model with analytics prompt
+        
+        await chat_history.initialize()
         domain_analytics = await get_domain_analytics("test-site.com")
+        print(domain_analytics)
         model = get_model(domain_analytics)
         
         # Get domain analytics
+        # await chat_history.save_chat_history(request.query)
         
         # Send message and get response
         response = model.generate_content(
             f"user query: {request.query}",
             generation_config=genai.GenerationConfig()
         )
-
+        # await chat_history.save_chat_history(response.text)
         return format_response(
             status=True,
             data=response.text,
@@ -74,3 +78,26 @@ async def send(request: ChatRequest):
     except Exception as e:
         print(e)
         raise HTTPException(status_code=500, detail=str(e))
+    
+@router.get("/chat/history/{domain}")
+async def get_chat_history(domain:str):
+    """Get detailed analytics for a specific domain"""
+    try:
+        # Initialize tracking service
+        await chat_history.initialize()
+        
+        # Get all tracking data for the domain
+        chat_history_response = await chat_history.collection.find({"domain":domain}).to_list(None)
+        
+        if not chat_history_response:
+            raise HTTPException(status_code=404, detail=f"No data found")
+        
+        return format_response(
+            message=f"chats retrieved successfully",
+            data=chat_history_response
+        )
+    except HTTPException as he:
+        raise he
+    except Exception as e:
+        print(e)    
+        raise HTTPException(status_code=500, detail=str(e)) 

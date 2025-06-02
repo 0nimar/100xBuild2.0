@@ -23,7 +23,7 @@ async def get_tracking_script(request: Request):
         console.log('Tracking script initialized'); // Debug log
         
         // Configuration
-        const TRACKING_ENDPOINT = 'http://localhost:8000/api/v1/tracking/track';
+        const TRACKING_ENDPOINT = 'http://https://e5a9-27-7-148-160.ngrok-free.app/api/v1/tracking/track';
         const SESSION_TIMEOUT = 30 * 60 * 1000; // 30 minutes in milliseconds
         const PAGE_CHANGE_INTERVAL = 1000; // Check for page changes every second
         let sessionId = localStorage.getItem('tracking_session_id') || null;

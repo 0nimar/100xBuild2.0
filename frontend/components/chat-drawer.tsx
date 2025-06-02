@@ -1,3 +1,4 @@
+"use client"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -12,7 +13,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet"
 import { Send } from "lucide-react"
-import { ReactNode, useState } from "react"
+import { ReactNode, useEffect, useState } from "react"
 import { useToast } from "@/components/ui/use-toast"
 
 interface ChatDrawerProps {
@@ -31,7 +32,30 @@ export default function ChatDrawer({ props }: { props: ChatDrawerProps }) {
     const [input, setInput] = useState("");
     const [isLoading, setIsLoading] = useState(false);
     const { toast } = useToast();
-
+    const [error, setError] = useState<string | null>(null)
+    const fetchChatHistory = async () => {
+    try {
+      setError(null)
+      const response = await fetch('http://localhost:8000/api/v1/chat/history')
+      if (!response.ok) {
+        throw new Error('Failed to fetch domains')
+      }
+      const responseData = await response.json()
+      if (responseData.data){
+        setMessages(responseData.data)
+      }
+       else {
+        console.error("Invalid response format:", responseData)
+        setError("Invalid response format from server")
+      }
+    } catch (error) {
+      console.error("Failed to fetch domains:", error)
+      setError("Failed to fetch domains. Please try again.")
+    }
+  }
+useEffect(() => {
+    fetchChatHistory()
+  }, [])
     const handleSend = async () => {
         if (!input.trim()) return;
 
@@ -79,7 +103,7 @@ export default function ChatDrawer({ props }: { props: ChatDrawerProps }) {
             <SheetTrigger asChild>
                 {props.triggerEl}
             </SheetTrigger>
-            <SheetContent className="flex flex-col h-full w-[600px] sm:w-[800px]">
+            <SheetContent className="flex flex-col !max-w-[50%]">
                 <SheetHeader>
                     <SheetTitle>Intelligent Insights</SheetTitle>
                     <SheetDescription>

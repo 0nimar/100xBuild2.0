@@ -1,5 +1,7 @@
 fastapi
+fastapi[standard]
 uvicorn
+geoip2
 motor
 pymongo
 pydantic
@@ -9,3 +11,4 @@ passlib[bcrypt]
 python-multipart
 pydantic-settings
 websockets
+google-generativeai
