@@ -41,8 +41,8 @@ To run the application in development mode:
 uvicorn main:app --reload
 ```
 
-The API will be available at `http://localhost:8000`
+The API will be available at `https://one00xbuild2-0.onrender.com`
 
 API documentation will be available at:
-- Swagger UI: `http://localhost:8000/docs`
-- ReDoc: `http://localhost:8000/redoc` 
+- Swagger UI: `https://one00xbuild2-0.onrender.com/docs`
+- ReDoc: `https://one00xbuild2-0.onrender.com/redoc` 

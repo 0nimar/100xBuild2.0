@@ -36,7 +36,7 @@ export default function ChatDrawer({ props }: { props: ChatDrawerProps }) {
     const fetchChatHistory = async () => {
     try {
       setError(null)
-      const response = await fetch('http://localhost:8000/api/v1/chat/history')
+      const response = await fetch('https://one00xbuild2-0.onrender.com/api/v1/chat/history')
       if (!response.ok) {
         throw new Error('Failed to fetch domains')
       }
@@ -65,7 +65,7 @@ useEffect(() => {
         setIsLoading(true);
 
         try {
-            const response = await fetch('http://localhost:8000/api/v1/send', {
+            const response = await fetch('https://one00xbuild2-0.onrender.com/api/v1/send', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

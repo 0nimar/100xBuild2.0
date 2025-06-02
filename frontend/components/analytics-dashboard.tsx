@@ -100,7 +100,7 @@ export default function AnalyticsDashboard() {
   const fetchDomains = async () => {
     try {
       setError(null)
-      const response = await fetch('http://localhost:8000/api/v1/tracking/domains')
+      const response = await fetch('https://one00xbuild2-0.onrender.com/api/v1/tracking/domains')
       if (!response.ok) {
         throw new Error('Failed to fetch domains')
       }
@@ -132,7 +132,7 @@ export default function AnalyticsDashboard() {
         ...activeFilters
       })
       
-      const response = await fetch(`http://localhost:8000/api/v1/tracking/domain/${domain}?${queryParams}`)
+      const response = await fetch(`https://one00xbuild2-0.onrender.com/api/v1/tracking/domain/${domain}?${queryParams}`)
       if (!response.ok) {
         throw new Error('Failed to fetch analytics')
       }
