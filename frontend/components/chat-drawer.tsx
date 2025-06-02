@@ -16,15 +16,40 @@ import { Send } from "lucide-react"
 import { ReactNode, useEffect, useState } from "react"
 import { useToast } from "@/components/ui/use-toast"
 
+interface Message {
+    content: string;
+    isUser: boolean;
+}
+
+const formatMessage = (content: string) => {
+    // Split content into lines
+    const lines = content.split('\n');
+    
+    return lines.map((line, index) => {
+        // Handle bold text
+        let formattedLine = line.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+        
+        // Handle italic text
+        formattedLine = formattedLine.replace(/\*(.*?)\*/g, '<em>$1</em>');
+        
+        // Handle bullet points
+        if (line.trim().startsWith('* ')) {
+            formattedLine = `<li>${formattedLine.substring(2)}</li>`;
+        }
+        
+        // Handle headers
+        if (line.trim().startsWith('**') && line.trim().endsWith('**')) {
+            formattedLine = `<h3 class="font-bold text-lg mb-2">${line.replace(/\*\*/g, '')}</h3>`;
+        }
+        
+        return <div key={index} dangerouslySetInnerHTML={{ __html: formattedLine }} />;
+    });
+};
+
 interface ChatDrawerProps {
     triggerEl: ReactNode;
     open: boolean;
     onOpenchange: (aiMode: boolean) => void
-}
-
-interface Message {
-    content: string;
-    isUser: boolean;
 }
 
 export default function ChatDrawer({ props }: { props: ChatDrawerProps }) {
@@ -123,7 +148,7 @@ useEffect(() => {
                                         : 'bg-muted'
                                 }`}
                             >
-                                {message.content}
+                                {message.isUser ? message.content : formatMessage(message.content)}
                             </div>
                         </div>
                     ))}

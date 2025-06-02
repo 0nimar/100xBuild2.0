@@ -24,8 +24,8 @@ class ChatRequest(BaseModel):
             }
         }
 
-@lru_cache(maxsize=100)
 async def get_domain_analytics(domain: str):
+    
     return await get_tracking_analytics(domain)
 
 def get_model(domain_analytics: str):
