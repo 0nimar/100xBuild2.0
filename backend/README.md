@@ -41,8 +41,8 @@ To run the application in development mode:
 uvicorn main:app --reload
 ```
 
-The API will be available at `http://localhost:8000`
+The API will be available at `https://e5a9-27-7-148-160.ngrok-free.app`
 
 API documentation will be available at:
-- Swagger UI: `http://localhost:8000/docs`
-- ReDoc: `http://localhost:8000/redoc` 
+- Swagger UI: `https://e5a9-27-7-148-160.ngrok-free.app/docs`
+- ReDoc: `https://e5a9-27-7-148-160.ngrok-free.app/redoc` 
